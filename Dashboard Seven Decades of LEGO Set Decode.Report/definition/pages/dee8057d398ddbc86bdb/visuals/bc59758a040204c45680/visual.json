@@ -1,0 +1,85 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "bc59758a040204c45680",
+  "position": {
+    "x": 186.31780818810165,
+    "y": 261.69735813288685,
+    "z": 2000,
+    "height": 125.41256157635468,
+    "width": 1298.7931034482758,
+    "tabOrder": 8000
+  },
+  "visual": {
+    "visualType": "htmlContent443BE3AD55E043BF878BED274D3A6855",
+    "query": {
+      "queryState": {
+        "content": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "HTML Card History Summary"
+                }
+              },
+              "queryRef": "_Measures.HTML LEGO History Summary",
+              "nativeQueryRef": "HTML LEGO History Summary"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "padding": [
+        {
+          "properties": {
+            "right": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "left": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "5D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "92f83710c6365012800b",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "HTML Card History Summary"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "54d8c5b52c4055c2099e",
+  "position": {
+    "x": 1.9280199407142504,
+    "y": 761.10211864429073,
+    "z": 13000,
+    "height": 342.08743842364532,
+    "width": 1922.3645320197045,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "htmlContent443BE3AD55E043BF878BED274D3A6855",
+    "query": {
+      "queryState": {
+        "content": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "HTML Minifig Grid"
+                }
+              },
+              "queryRef": "_Measures.HTML Minifig Matrix Detail",
+              "nativeQueryRef": "HTML Minifig Grid"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Minifig Grid'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "parentGroupName": "95c978726d535bb70cc8"
+}

@@ -1,0 +1,54 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "997a82ce53bb8bbda1bb",
+  "position": {
+    "x": 1.3585408184430321,
+    "y": 403.04877353227278,
+    "z": 2000,
+    "height": 334.59516298633019,
+    "width": 669.19032597266039,
+    "tabOrder": 11018
+  },
+  "visual": {
+    "visualType": "htmlContent443BE3AD55E043BF878BED274D3A6855",
+    "query": {
+      "queryState": {
+        "content": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "HTML Minifig Boxplot"
+                }
+              },
+              "queryRef": "_Measures.HTML Minifig Boxplot",
+              "nativeQueryRef": "HTML Minifig Boxplot"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Minifig Boxplot'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "parentGroupName": "95c978726d535bb70cc8"
+}

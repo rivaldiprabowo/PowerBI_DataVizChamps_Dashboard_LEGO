@@ -1,0 +1,16 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "4040fa9dd116d52412be",
+  "position": {
+    "x": 185.3838065194532,
+    "y": 213.61111111111094,
+    "z": 16000,
+    "height": 1103.6400127969043,
+    "width": 1928.2273045916575,
+    "tabOrder": 11014
+  },
+  "visualGroup": {
+    "displayName": "Variety Page",
+    "groupMode": "ScaleMode"
+  }
+}

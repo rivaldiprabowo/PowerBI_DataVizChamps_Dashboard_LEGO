@@ -1,0 +1,96 @@
+table decade_lego_set_color_rgb
+	lineageTag: e3a0f213-ea0a-4c7b-87f3-0eecb9ccd01e
+
+	column Decade
+		lineageTag: bb17633a-c81f-4729-be54-d5869be6866d
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Decade]
+		sortByColumn: 'Decade Order'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Decade Order'
+		formatString: 0
+		lineageTag: 01e76f28-5df8-4c12-9b34-432cc270f437
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Decade Order]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Color Variety Tier'
+		lineageTag: 094a4aa3-a5d1-409d-829a-d52467deb7b2
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Color Variety Tier]
+		sortByColumn: 'Color Variety Order'
+
+		annotation SummarizationSetBy = Automatic
+
+	column SetName
+		lineageTag: 467ac586-fce5-430e-895b-7e27043983e9
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [SetName]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Image
+		lineageTag: a274c443-bc3b-48d7-bc4b-dd8fc3fa095b
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Image]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Colors
+		lineageTag: c223ca4e-e997-4453-8077-73cd0eb40456
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Colors]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Color Variety Order'
+		formatString: 0
+		lineageTag: ef260c2f-f38c-4641-966a-46bf9806e72f
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Color Variety Order]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Colors Name'
+		lineageTag: 47261f46-5c96-40eb-b442-0026af376d3c
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Colors Name]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition decade_lego_set_color_rgb = calculated
+		mode: import
+		source =
+				
+				
+				SELECTCOLUMNS (
+				    SUMMARIZE (
+				        sets,
+				        sets[decade],
+				        sets[decade_order],
+				        sets[color_variety_tier],
+				        sets[color_variety_order]
+				    ),
+				    "Decade", sets[decade],
+				    "Decade Order", sets[decade_order],
+				    "Color Variety Tier", sets[color_variety_tier],
+				    "Color Variety Order",sets[color_variety_order],
+				    "SetName",[Color Set Name],
+				    "Image",[Color Set Image],
+				    "Colors",CALCULATE(MAX(sets[set_colors_rgb])),
+				    "Colors Name",CALCULATE(MAX(sets[set_colors]))
+				)
+
+	annotation PBI_Id = 057f5a8f80e24cf580c0d282688d0e36
+

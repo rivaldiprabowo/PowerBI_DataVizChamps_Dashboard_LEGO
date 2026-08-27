@@ -1,0 +1,17 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "95c978726d535bb70cc8",
+  "position": {
+    "x": 186.2860438292962,
+    "y": 214.14365548980922,
+    "z": 8500,
+    "height": 1103.1895570679362,
+    "width": 1927.4631343429594,
+    "tabOrder": 11023
+  },
+  "visualGroup": {
+    "displayName": "Minifigs Page",
+    "groupMode": "ScaleMode"
+  },
+  "isHidden": true
+}

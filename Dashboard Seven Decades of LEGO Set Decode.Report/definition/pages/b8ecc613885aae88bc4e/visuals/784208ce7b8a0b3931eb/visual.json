@@ -1,0 +1,106 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "784208ce7b8a0b3931eb",
+  "position": {
+    "x": 702.19976058710756,
+    "y": 136.27695439452307,
+    "z": 10000,
+    "height": 603.627760252366,
+    "width": 1220.820189274448,
+    "tabOrder": 11014
+  },
+  "visual": {
+    "visualType": "htmlContent443BE3AD55E043BF878BED274D3A6855",
+    "query": {
+      "queryState": {
+        "content": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "HTML Minifig Stacked Area"
+                }
+              },
+              "queryRef": "_Measures.HTML Minifig Stacked Area",
+              "nativeQueryRef": "HTML Minifig Stacked Area"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "padding": [
+        {
+          "properties": {
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "left": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "right": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Minifig Trend Chart'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "parentGroupName": "95c978726d535bb70cc8",
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "b48b0e5b00024a8183ab",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "HTML Minifig Stacked Area"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

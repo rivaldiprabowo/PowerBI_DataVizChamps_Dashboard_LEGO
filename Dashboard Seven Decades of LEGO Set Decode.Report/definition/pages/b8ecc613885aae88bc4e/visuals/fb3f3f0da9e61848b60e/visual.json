@@ -1,0 +1,16 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "fb3f3f0da9e61848b60e",
+  "position": {
+    "x": 479.04558263192916,
+    "y": 363.1790123456791,
+    "z": 8000,
+    "height": 27.777777777777779,
+    "width": 191.11111111111111
+  },
+  "visualGroup": {
+    "displayName": "BM Variety Hist",
+    "groupMode": "ScaleMode"
+  },
+  "parentGroupName": "4040fa9dd116d52412be"
+}

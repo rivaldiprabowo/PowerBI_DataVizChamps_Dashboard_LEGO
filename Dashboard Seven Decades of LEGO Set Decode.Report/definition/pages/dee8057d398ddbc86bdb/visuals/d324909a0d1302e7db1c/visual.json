@@ -1,0 +1,38 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "d324909a0d1302e7db1c",
+  "position": {
+    "x": 1615.9959293953086,
+    "y": 288.91708997378339,
+    "z": 8000,
+    "height": 102.72727272727272,
+    "width": 184.54545454545453,
+    "tabOrder": 5000
+  },
+  "visual": {
+    "visualType": "htmlContent443BE3AD55E043BF878BED274D3A6855",
+    "query": {
+      "queryState": {
+        "content": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "HTML Definition Card Total Set"
+                }
+              },
+              "queryRef": "_Measures.HTML Definition Card Total Set",
+              "nativeQueryRef": "HTML Definition Card Total Set"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

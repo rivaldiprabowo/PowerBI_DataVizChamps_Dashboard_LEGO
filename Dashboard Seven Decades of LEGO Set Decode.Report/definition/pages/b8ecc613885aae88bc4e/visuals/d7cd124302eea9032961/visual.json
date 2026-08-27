@@ -1,0 +1,17 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "d7cd124302eea9032961",
+  "position": {
+    "x": 478.46234732670064,
+    "y": 363.58974358974353,
+    "z": 1000,
+    "height": 27.69230769230769,
+    "width": 191.53846153846152
+  },
+  "visualGroup": {
+    "displayName": "BM Part Box",
+    "groupMode": "ScaleMode"
+  },
+  "parentGroupName": "0931b090e391d7816a7b",
+  "isHidden": true
+}

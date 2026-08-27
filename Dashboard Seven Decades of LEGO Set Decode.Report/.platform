@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Dashboard Seven Decades of LEGO Set Decode"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "7c516cf9-c87f-4a98-8b26-a1b335070f97"
+  }
+}

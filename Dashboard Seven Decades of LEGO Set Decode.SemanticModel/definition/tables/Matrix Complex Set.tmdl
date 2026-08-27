@@ -1,0 +1,79 @@
+table 'Matrix Complex Set'
+	lineageTag: 50e5b25c-792e-4803-94fe-02225b06d3e5
+
+	column Metric
+		lineageTag: 0eff02b8-401e-4d14-9371-183bebb4f8b0
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Metric]
+		sortByColumn: 'Metric No'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Metric No'
+		formatString: 0
+		lineageTag: 77a5218e-393f-47e5-9345-933a084f227b
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Metric No]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Set Complexity'
+		lineageTag: cce64f8d-73e4-4124-a708-30faef1b6cc1
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Set Complexity]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Set Comp Order' =
+			
+			SWITCH(
+			    TRUE(),
+			    'Matrix Complex Set'[Set Complexity] = "Micro", 1,
+			    'Matrix Complex Set'[Set Complexity] = "Small", 2,
+			    'Matrix Complex Set'[Set Complexity] = "Medium", 3,
+			    'Matrix Complex Set'[Set Complexity] = "Large", 4,
+			    'Matrix Complex Set'[Set Complexity] = "Mega", 5
+			)
+		formatString: 0
+		lineageTag: 5279a8c4-6d84-4c98-93c2-c5ed0a756fe2
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Matrix Complex Set' = calculated
+		mode: import
+		source =
+				
+				DATATABLE(
+				    "Set Complexity",STRING,
+				    "Metric",STRING,
+				    "Metric No",INT64,
+				    {
+				        {"Micro","Set Complexity Range",1},
+				        {"Micro","% Share of Decade",2},
+				        {"Micro","Avg Part",3},
+				        {"Micro","Representative Set",4},
+				        {"Small","Set Complexity Range",1},
+				        {"Small","% Share of Decade",2},
+				        {"Small","Avg Part",3},
+				        {"Small","Representative Set",4},
+				        {"Medium","Set Complexity Range",1},
+				        {"Medium","% Share of Decade",2},
+				        {"Medium","Avg Part",3},
+				        {"Medium","Representative Set",4},
+				        {"Large","Set Complexity Range",1},
+				        {"Large","% Share of Decade",2},
+				        {"Large","Avg Part",3},
+				        {"Large","Representative Set",4},
+				        {"Mega","Set Complexity Range",1},
+				        {"Mega","% Share of Decade",2},
+				        {"Mega","Avg Part",3},
+				        {"Mega","Representative Set",4}
+				    }
+				)
+
+	annotation PBI_Id = 8f96357e9e204b82947376d805055faf
+

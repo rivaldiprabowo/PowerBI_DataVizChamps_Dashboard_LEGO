@@ -1,0 +1,54 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "4ba5abd5a4d1bc6600cc",
+  "position": {
+    "x": 2.9789424853004789,
+    "y": 403.68722133549215,
+    "z": 7000,
+    "height": 336.66666666666669,
+    "width": 670,
+    "tabOrder": 3000
+  },
+  "visual": {
+    "visualType": "htmlContent443BE3AD55E043BF878BED274D3A6855",
+    "query": {
+      "queryState": {
+        "content": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "HTML Parts Variety Histogram"
+                }
+              },
+              "queryRef": "_Measures.HTML Histogram Parts Variety",
+              "nativeQueryRef": "HTML Parts Variety Histogram"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Variety Hist Chart'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "parentGroupName": "4040fa9dd116d52412be"
+}

@@ -1,0 +1,52 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "e88bf17ca86254b56ced",
+  "position": {
+    "x": 146.4978779161664,
+    "y": 340.91097269170581,
+    "z": 3000,
+    "height": 117.14285714285715,
+    "width": 286.42857142857144
+  },
+  "visual": {
+    "visualType": "htmlContent443BE3AD55E043BF878BED274D3A6855",
+    "query": {
+      "queryState": {
+        "content": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "HTML Card Total Color Active"
+                }
+              },
+              "queryRef": "_Measures.HTML Card Total Color",
+              "nativeQueryRef": "HTML Card Total Color Active"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "contentFormatting": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

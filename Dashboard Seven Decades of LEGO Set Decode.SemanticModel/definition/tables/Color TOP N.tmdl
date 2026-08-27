@@ -1,0 +1,18 @@
+table 'Color TOP N'
+	lineageTag: eca35977-cb70-48d9-820b-b93951104706
+
+	column Value
+		formatString: 0
+		lineageTag: 2b8936d4-3432-44bf-ac05-1405535f8217
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Value]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Color TOP N' = calculated
+		mode: import
+		source = GENERATESERIES(1,100,1)
+
+	annotation PBI_Id = 59ca70cbbbb648329fb394fe7dde612e
+

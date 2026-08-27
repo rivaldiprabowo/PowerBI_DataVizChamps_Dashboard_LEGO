@@ -1,0 +1,17 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "4a484c414b0c410c563b",
+  "position": {
+    "x": 696.28286014721357,
+    "y": 0,
+    "z": 12000,
+    "height": 55.000000000000028,
+    "width": 1231.6666666666667,
+    "tabOrder": 3000
+  },
+  "visualGroup": {
+    "displayName": "BM Part Main",
+    "groupMode": "ScaleMode"
+  },
+  "parentGroupName": "0931b090e391d7816a7b"
+}

@@ -1,0 +1,54 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "7f173dbe6b5c2ac85adb",
+  "position": {
+    "x": 3.1814644165073958,
+    "y": 761.19868637110017,
+    "z": 10000,
+    "height": 342.08743842364532,
+    "width": 1922.3645320197045,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "htmlContent443BE3AD55E043BF878BED274D3A6855",
+    "query": {
+      "queryState": {
+        "content": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "HTML Total Parts Grid"
+                }
+              },
+              "queryRef": "_Measures.HTML Total Parts Grid",
+              "nativeQueryRef": "HTML Total Parts Grid"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Part Grid'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "parentGroupName": "0931b090e391d7816a7b"
+}

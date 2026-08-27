@@ -1,0 +1,974 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/1.4.0/schema.json",
+  "displayName": "Minifigures Proportions",
+  "name": "8a73559ccd1115aea5b7",
+  "options": {
+    "applyOnlyToTargetVisuals": true,
+    "targetVisualNames": [
+      "d4dcf1ab2e5c56428838",
+      "b408cb662b0e482d4ebb",
+      "784208ce7b8a0b3931eb",
+      "6550db90aa7d33739474",
+      "75776e88c590aacbc9b1",
+      "b3a0117763b8aea9be04",
+      "93142f60093c4e706507",
+      "ca7e22bb19d4b4d6e5d4",
+      "741732490061d20d841d",
+      "38be1d36569e86578439"
+    ],
+    "suppressData": true
+  },
+  "explorationState": {
+    "version": "1.3",
+    "activeSection": "b8ecc613885aae88bc4e",
+    "sections": {
+      "b8ecc613885aae88bc4e": {
+        "visualContainers": {
+          "0f03aea0c95432ab7113": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "c6b939ab13729d001a56",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures"
+                        }
+                      },
+                      "Property": ","
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "pivotTable",
+              "objects": {}
+            }
+          },
+          "43f9fcd80922535a34c4": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "a8b08ea5434cc99e1a06",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures"
+                        }
+                      },
+                      "Property": "HTML Total Parts Stacked Area"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "htmlContent443BE3AD55E043BF878BED274D3A6855",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "7f173dbe6b5c2ac85adb": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "30e17dbbba11389c6257",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures"
+                        }
+                      },
+                      "Property": "HTML Total Parts Matrix"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "htmlContent443BE3AD55E043BF878BED274D3A6855",
+              "objects": {}
+            }
+          },
+          "962be2648439b51242b2": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "5e41684d8a001ac2cd51",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures"
+                        }
+                      },
+                      "Property": "HTML Total Parts Histogram"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "htmlContent443BE3AD55E043BF878BED274D3A6855",
+              "objects": {}
+            }
+          },
+          "4a27ba6f707a228e79e0": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "905e2e600e0202810e45",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures"
+                        }
+                      },
+                      "Property": "HTML Card History Summary"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "htmlContent443BE3AD55E043BF878BED274D3A6855",
+              "objects": {}
+            }
+          },
+          "6ff2202e010810498a42": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "7f99fb6c4cbc05294322": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "9c839ee505c444ce15b6": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "c635ee2c39dc02703b00": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "f2e1d425400ca09ea190": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "b679924a42ba05a25269": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "fed82eae8beaed5c0e42",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "d",
+                        "Entity": "dim_year",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Not": {
+                            "Expression": {
+                              "In": {
+                                "Expressions": [
+                                  {
+                                    "Column": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Source": "d"
+                                        }
+                                      },
+                                      "Property": "decade"
+                                    }
+                                  }
+                                ],
+                                "Values": [
+                                  [
+                                    {
+                                      "Literal": {
+                                        "Value": "null"
+                                      }
+                                    }
+                                  ]
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "dim_year"
+                        }
+                      },
+                      "Property": "decade"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "advancedSlicerVisual",
+              "objects": {
+                "merge": {
+                  "selection": [
+                    {
+                      "properties": {
+                        "strictSingleSelect": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "false"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "dbffb8f03abd0b308936": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "c478c22ea039520197e4": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "9c2700e30030ddb60069": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "833d8ea7a818899db617": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "ad5a7095d4b0610b46bd",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures"
+                        }
+                      },
+                      "Property": "HTML Parts Variety Stacked Area"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "htmlContent443BE3AD55E043BF878BED274D3A6855",
+              "objects": {}
+            }
+          },
+          "1bcd8c7fd8722b3e40ad": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "2fd84be5934a9e902703",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures"
+                        }
+                      },
+                      "Property": "HTML Total Parts Matrix"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "htmlContent443BE3AD55E043BF878BED274D3A6855",
+              "objects": {}
+            }
+          },
+          "4ba5abd5a4d1bc6600cc": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "0c2c87bf19209eb724b1",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures"
+                        }
+                      },
+                      "Property": "HTML Parts Variety Histogram"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "htmlContent443BE3AD55E043BF878BED274D3A6855",
+              "objects": {}
+            }
+          },
+          "39050f3156056469e7a3": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "a7668ca6d65ecb806e69",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures"
+                        }
+                      },
+                      "Property": "HTML Card History Summary"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "htmlContent443BE3AD55E043BF878BED274D3A6855",
+              "objects": {}
+            }
+          },
+          "25d54ebf78456038377b": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "f55bb946541ba77976a1": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "c4b94fa600a40ba30938": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "581afbae1b193b910054": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "af28dc144b4807ebe0a4": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "a929c155186504e452bb": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "9f07acc9058c460901e1": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "bbef240e1490dd680a48": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "b3a0117763b8aea9be04": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "c895e3ee8406c6d677cd",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures"
+                        }
+                      },
+                      "Property": "HTML Minifig Stacked Area"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "htmlContent443BE3AD55E043BF878BED274D3A6855",
+              "objects": {}
+            }
+          },
+          "54d8c5b52c4055c2099e": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "0c6c2519e0c7739685c3",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures"
+                        }
+                      },
+                      "Property": "HTML Total Parts Matrix"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "htmlContent443BE3AD55E043BF878BED274D3A6855",
+              "objects": {}
+            }
+          },
+          "f201f1bbb5101e3d80de": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "36b1a8aeec161ce9e43d",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures"
+                        }
+                      },
+                      "Property": "HTML Minifig Histogram"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "htmlContent443BE3AD55E043BF878BED274D3A6855",
+              "objects": {}
+            }
+          },
+          "b5432d2173a8885551a5": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "bcbc479f215701957ddd",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures"
+                        }
+                      },
+                      "Property": "HTML Card History Summary"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "htmlContent443BE3AD55E043BF878BED274D3A6855",
+              "objects": {}
+            }
+          },
+          "b408cb662b0e482d4ebb": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "1d107bf1b4b0e3708805": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "74b8e7b3dcceadba3503": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "820003f44514c305c511": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "d6f25b6e9270dd0752d0",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures"
+                        }
+                      },
+                      "Property": "HTML Total Parts Barchart"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "htmlContent443BE3AD55E043BF878BED274D3A6855",
+              "objects": {}
+            }
+          },
+          "c861334d16d3a00098d2": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "b2e297a92a00500c1436": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "2feef7615ddc08ab4d95": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "22185609435dd02ab6d4": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "49c9518db0a5730b1c0a",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures"
+                        }
+                      },
+                      "Property": "HTML Total Parts Boxplot"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "htmlContent443BE3AD55E043BF878BED274D3A6855",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "0688cb8d00a2005a28b5": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "e2b4305c96758de55211": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "c99f403b6552070c3429": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "1ce094a02e8e840c7e46": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "be6d9b7467c0bd057e84": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "f71660cc8d103c839234": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "02b49fa696ad00ac69ea": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "4b4c82c0731a75990533": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "646be9890b027e24d8bc": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "ef35bc624e793d1dd843",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures"
+                        }
+                      },
+                      "Property": "HTML Parts Variety Barchart"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "htmlContent443BE3AD55E043BF878BED274D3A6855",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "b2d6e7f03a276a7c4cac": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "571c738f93ae5a934ea7": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "a38bdfdb01c3db91c262": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "de4ab909ae67019a0090": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "76b054ac498d721d708b": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "d1b0ae16487e70418010": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "6fcffa6fb0576e1547c0",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures"
+                        }
+                      },
+                      "Property": "HTML Parts Variety Boxplot"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "htmlContent443BE3AD55E043BF878BED274D3A6855",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "784208ce7b8a0b3931eb": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "c08a5d004b320b400291",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures"
+                        }
+                      },
+                      "Property": "HTML Minifig Stacked Area"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "htmlContent443BE3AD55E043BF878BED274D3A6855",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "93142f60093c4e706507": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "ca7e22bb19d4b4d6e5d4": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "75776e88c590aacbc9b1": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "741732490061d20d841d": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "38be1d36569e86578439": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "997a82ce53bb8bbda1bb": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "fa1971fd491d101415d3",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures"
+                        }
+                      },
+                      "Property": "HTML Minifig Histogram"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "htmlContent443BE3AD55E043BF878BED274D3A6855",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "000db9475392d0ebcac0": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "30e9221772d567d7977e": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "e3eba0a4b174c87be8de": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "1ff8219eea0203a4800c": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "6a0b9bbdc20d662523b8": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "8439ec41b2a506ee3cd4": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          }
+        },
+        "visualContainerGroups": {
+          "0931b090e391d7816a7b": {
+            "isHidden": true,
+            "children": {
+              "4a484c414b0c410c563b": {
+                "isHidden": false
+              },
+              "c211c355849a3e8d840c": {
+                "isHidden": true
+              },
+              "c493330414c7778bb714": {
+                "isHidden": false
+              },
+              "f5e1f73f35ca2d0526c9": {
+                "isHidden": false
+              },
+              "d7cd124302eea9032961": {
+                "isHidden": true
+              }
+            }
+          },
+          "806e8d8542604bc10000": {
+            "isHidden": true
+          },
+          "4040fa9dd116d52412be": {
+            "isHidden": true,
+            "children": {
+              "8223066e932586b05123": {
+                "isHidden": false
+              },
+              "c1738bfc7ad5379d0b76": {
+                "isHidden": false
+              },
+              "fb3f3f0da9e61848b60e": {
+                "isHidden": false
+              },
+              "3b806f4987830ab5d03b": {
+                "isHidden": true
+              },
+              "08f67cc0ca799e039a33": {
+                "isHidden": true
+              }
+            }
+          },
+          "95c978726d535bb70cc8": {
+            "children": {
+              "60eb2d806613ecd55134": {
+                "isHidden": false
+              },
+              "d4dcf1ab2e5c56428838": {
+                "isHidden": true
+              },
+              "c9dcfa650eaa062a4402": {
+                "isHidden": false
+              },
+              "6550db90aa7d33739474": {
+                "isHidden": false
+              },
+              "a60af4bc1a9e08678bb2": {
+                "isHidden": true
+              }
+            }
+          }
+        }
+      }
+    },
+    "objects": {
+      "merge": {
+        "outspacePane": [
+          {
+            "properties": {
+              "expanded": {
+                "expr": {
+                  "Literal": {
+                    "Value": "false"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

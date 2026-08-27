@@ -1,0 +1,35 @@
+table part_categories
+	lineageTag: 29388e5a-50c2-43ec-a356-ca1bad35473e
+
+	column part_cat_id
+		dataType: int64
+		formatString: 0
+		lineageTag: cb7d8fc8-5661-436b-98c5-741be66207bb
+		summarizeBy: none
+		sourceColumn: part_cat_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column part_name_category
+		dataType: string
+		lineageTag: f7078ffb-24f7-4083-861d-c0d5e452906a
+		summarizeBy: none
+		sourceColumn: part_name_category
+
+		annotation SummarizationSetBy = Automatic
+
+	partition part_categories = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\kanzi\Documents\Data Challenge\Power BI Data Championship\World Champs BCN 26 Round 2\Data\part_categories.csv"),[Delimiter=",", Columns=2, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"id", Int64.Type}, {"name", type text}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"id", "part_cat_id"}, {"name", "part_name_category"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

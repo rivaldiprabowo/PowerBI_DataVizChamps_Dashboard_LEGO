@@ -1,0 +1,17 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "8223066e932586b05123",
+  "position": {
+    "x": 696.56063792499094,
+    "y": 0,
+    "z": 15000,
+    "height": 55.000000000000028,
+    "width": 1231.6666666666667,
+    "tabOrder": 4000
+  },
+  "visualGroup": {
+    "displayName": "BM Variety Main",
+    "groupMode": "ScaleMode"
+  },
+  "parentGroupName": "4040fa9dd116d52412be"
+}

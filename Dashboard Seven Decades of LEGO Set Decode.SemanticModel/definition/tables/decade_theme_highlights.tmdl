@@ -1,0 +1,80 @@
+table decade_theme_highlights
+	lineageTag: db07512f-dd78-4284-8e2e-b67f8c19e5c5
+
+	column DecadeStart
+		formatString: 0
+		lineageTag: 1dccccdf-ff83-4b0f-99ec-b91ba16c999a
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [DecadeStart]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Decade
+		lineageTag: c4ea9a78-9965-43de-ac75-b734ac2a74ce
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Decade]
+
+		annotation SummarizationSetBy = Automatic
+
+	column RepSetNum
+		lineageTag: c0f4d8bf-cbd5-40da-b8da-84b693325000
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [RepSetNum]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Theme
+		lineageTag: 36a5591a-c358-4e6a-8873-87865b400345
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Theme]
+
+		annotation SummarizationSetBy = Automatic
+
+	column ImgURL
+		lineageTag: accd3f8c-add7-4c2b-9aea-aea21ddc0282
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [ImgURL]
+
+		annotation SummarizationSetBy = Automatic
+
+	column AccentColor
+		lineageTag: 77a4a758-f01d-48f6-a187-21c75d84f75d
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [AccentColor]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition decade_theme_highlights = calculated
+		mode: import
+		source =
+				
+				SELECTCOLUMNS (
+				    FILTER ( sets, sets[decade_rank] = 1 ),
+				    "DecadeStart", sets[decade_rank],
+				    "Decade", sets[decade_order] & "s",
+				    "RepSetNum", sets[set_number],
+				    "Theme", sets[theme_name],
+				    "ImgURL", sets[img_url],
+				    "AccentColor",
+				        SWITCH (
+				            sets[decade_order],
+				            1950, "#000000",
+				            1960, "#36AEBF",
+				            1970, "#A5CA18",
+				            1980, "#81007B",
+				            1990, "#FE8A18",
+				            2000, "#C91A09",
+				            2010, "#0055BF",
+				            2020, "#237841",
+				            "#7F8C8D"
+				        )
+				)
+
+	annotation PBI_Id = b1cc909dcc304dc194b1d1601703c51e
+

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "0931b090e391d7816a7b",
+  "position": {
+    "x": 185.3838065194532,
+    "y": 213.33333333333334,
+    "z": 17000,
+    "height": 1103.2861247947455,
+    "width": 1927.9495268138803,
+    "tabOrder": 11007
+  },
+  "visualGroup": {
+    "displayName": "Parts Page",
+    "groupMode": "ScaleMode"
+  },
+  "isHidden": true
+}

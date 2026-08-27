@@ -1,0 +1,29 @@
+table dim_set_complexity
+	lineageTag: 9426d758-4fc3-464b-842e-a01e22b01abf
+
+	column 'Set Complexity'
+		lineageTag: 39a2a343-32d1-4d9e-b418-d69a6fc31a48
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Matrix Complex Set[Set Complexity]
+		sortByColumn: 'Set Comp Order'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Set Comp Order'
+		formatString: 0
+		lineageTag: f6e462ee-8386-4e9d-b1bf-30de20d8b607
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: Matrix Complex Set[Set Comp Order]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_set_complexity = calculated
+		mode: import
+		source =
+				
+				SUMMARIZE('Matrix Complex Set','Matrix Complex Set'[Set Complexity],'Matrix Complex Set'[Set Comp Order])
+
+	annotation PBI_Id = 770803aa2d4e46928e0d126e5d948c05
+

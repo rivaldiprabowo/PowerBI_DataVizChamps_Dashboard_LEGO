@@ -1,0 +1,38 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "26161713c7104a791608",
+  "position": {
+    "x": 193.07427517324373,
+    "y": 529.965299118285,
+    "z": 10000,
+    "height": 784.3071161048689,
+    "width": 1924.5318352059926,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "htmlContent443BE3AD55E043BF878BED274D3A6855",
+    "query": {
+      "queryState": {
+        "content": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "HTML LEGO Unified Timeline"
+                }
+              },
+              "queryRef": "_Measures.HTML Combined LEGO Theme + Set Timeline",
+              "nativeQueryRef": "HTML LEGO Unified Timeline"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

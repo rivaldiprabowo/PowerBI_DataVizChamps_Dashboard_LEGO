@@ -1,0 +1,873 @@
+table sets
+	lineageTag: 50594643-22ec-41ae-a3d6-1628c80f9aaf
+
+	column set_number
+		dataType: string
+		lineageTag: b4ccd786-ba4e-4e3a-b642-d99addae46bc
+		summarizeBy: none
+		sourceColumn: set_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_name
+		dataType: string
+		lineageTag: 97d6af3e-2375-4415-9e50-bb25df0be508
+		summarizeBy: none
+		sourceColumn: set_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column year_release
+		dataType: int64
+		formatString: 0
+		lineageTag: adfb1829-394f-4c81-bbf0-33eab163458b
+		summarizeBy: none
+		sourceColumn: year_release
+
+		annotation SummarizationSetBy = User
+
+	column theme_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 5fb171bb-4dbc-4987-a5f9-06e1962579b6
+		summarizeBy: none
+		sourceColumn: theme_id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column number_of_parts
+		dataType: int64
+		formatString: #,0
+		lineageTag: 87fd03be-b47b-4d9c-aaa6-cc5f2edf7d07
+		summarizeBy: sum
+		sourceColumn: number_of_parts
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column img_url
+		dataType: string
+		lineageTag: 2d8b7342-921b-4fca-9ff4-466ba6ab7397
+		dataCategory: ImageUrl
+		summarizeBy: none
+		sourceColumn: img_url
+
+		annotation SummarizationSetBy = Automatic
+
+	column decade
+		dataType: string
+		lineageTag: b071a639-b6cf-4686-bbf2-610a1a6accbe
+		summarizeBy: none
+		sourceColumn: decade
+
+		annotation SummarizationSetBy = Automatic
+
+	column event =
+			
+			SWITCH(
+			    TRUE(),
+			    sets[set_name] = "Individual 2 x 3 Bricks" && sets[year_release] = 1953, "Small Brick Set first released",
+			    sets[set_name] = "Wheel Toy" && sets[year_release] = 1963, "Wheel Set first released",
+			    sets[set_name] = "Town Plan" && sets[year_release] = 1969, "Town Plan set released",
+			    sets[set_name] = "Auto Chassis" && sets[year_release] = 1977, "LEGO Technic first released",
+			    sets[set_name] = "Galaxy Explorer" && sets[year_release] = 1979, "Galaxy Explorer released, consider one of the best LEGO set",
+			    sets[set_name] = "King's Castle" && sets[year_release] = 1984, "More realistic theme with redesigned of Castle Set",
+			    sets[set_name] = "Pirate Mini Figures" && sets[year_release] = 1989, "Pirates Set first released",
+			    sets[set_name] = "Super Car" && sets[year_release] = 1994, "Super Car set released, consider as on the best set in 1990s",
+			    sets[set_name] = "Tahu" && sets[year_release] = 2001, "First released of LEGO BIONICLE as one of the most influential themes",
+			    sets[set_name] = "Mobile Crane" && sets[year_release] = 2005, "LEGO crisis recovery strategy and returned to profitability",
+			    sets[set_name] = "Ninjago: Brickmaster" && sets[year_release] = 2005, "First released of LEGO NINJAGO as one the most successful original theme",
+			    sets[set_name] = "Millennium Falcon" && sets[year_release] = 2017, "Millenium Falcon set released as the peak of LEGO's engineering",
+			    sets[set_name] = "Pirates of Barracuda Bay" && sets[year_release] = 2020, "Pirates of Barracuda Bay set released as one of the best LEGO sets of 2020s",
+			    BLANK()
+			)
+		lineageTag: 0fed052e-9d4f-4879-a54d-608174f9f011
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column image_line_chart =
+			
+			SWITCH(
+			    TRUE(),
+			    'sets'[event] == BLANK(),BLANK(),
+			    sets[img_url]
+			)
+		lineageTag: 046e255f-c46e-49f9-9248-2dab9a2ee919
+		dataCategory: ImageUrl
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_sets_in_year =
+			
+			CALCULATE(
+			    COUNTROWS(sets),
+			    ALLEXCEPT(sets, sets[year_release])
+			)
+		formatString: 0
+		lineageTag: e571e545-98ba-4da3-999c-65b17d8571cb
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column year_label = IF(sets[event] == BLANK(), BLANK(), sets[year_release])
+		formatString: 0
+		lineageTag: 38caba04-e0cb-4f4d-b2dc-dc6547448d78
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_set_label = IF(sets[event] == BLANK(), BLANK(), sets[total_sets_in_year])
+		formatString: 0
+		lineageTag: c438dd37-a024-4e44-b4dc-82995e80301c
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column ManualCaptionYOffset =
+			
+			SWITCH(
+			    TRUE(),
+			    sets[year_release] = 2005, 0,
+			    0
+			)
+		formatString: 0
+		lineageTag: 7f722b3f-08d3-4452-8826-ddda424ae54e
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column ManualImageYOffset =
+			
+			SWITCH(
+			    TRUE(),
+			    sets[year_release] = 1963, 60,
+			    sets[year_release] = 1977, 60,
+			    sets[year_release] = 1984, 80,
+			    sets[year_release] = 1994, 50,
+			    sets[year_release] = 2005, 40,
+			    sets[year_release] = 2017, -10,
+			    sets[year_release] = 2020, 15,
+			    0
+			)
+		formatString: 0
+		lineageTag: 108ff585-44a1-4c8d-8de1-a0b388d20c88
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column ManualXOffset =
+			
+			SWITCH(
+			    TRUE(),
+			    sets[year_release] = 1953, 0,
+			    sets[year_release] = 1963, -70,
+			    sets[year_release] = 1969, -80,
+			    sets[year_release] = 1977, -140,
+			    sets[year_release] = 1979, -40,
+			    sets[year_release] = 1984, -30,
+			    sets[year_release] = 1989, -30,
+			    sets[year_release] = 1994, 0,
+			    sets[year_release] = 2005, 90,
+			    sets[year_release] = 2015, 55,
+			    sets[year_release] = 2017, -35,
+			    sets[year_release] = 2020, 40,
+			    0
+			)
+		formatString: 0
+		lineageTag: 4654ef1d-9f84-4d2f-9e12-f744d91db0b2
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column mini_figures =
+			
+			VAR Names = SUMMARIZE(RELATEDTABLE('inventories'), 'inventories'[mini_figures_name])
+			RETURN
+			CONCATENATEX(Names, 'inventories'[mini_figures_name], "||")
+		lineageTag: 4f950275-fa10-497e-ae53-fdb1a284f941
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column decade_rank =
+			
+			SWITCH(
+			    TRUE(),
+			    sets[decade] = "1950s" && sets[set_name] = "LEGO Town Plan Board, Plastic", 1,
+			    sets[decade] = "1960s" && sets[set_name] = "Town Plan - Continental European",1,
+			    sets[decade] = "1970s" && sets[set_name] = "Rocket Base",1,
+			    sets[decade] = "1980s" && sets[set_name] = "Go-Cart" && sets[year_release] = 1985,1,
+			    sets[decade] = "1990s" && sets[set_name] = "Imperial Trading Post",1,
+			    sets[decade] = "2000s" && sets[set_name] = "Brutaka",1,
+			    sets[decade] = "2010s" && sets[set_name] = "Battle for Ninjago City",1,
+			    sets[decade] = "2020s" && sets[set_name] = "Titanic",1,
+			    0
+			)
+		formatString: 0
+		lineageTag: 7a989c0a-1046-4f0c-af03-65495babf4df
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column decade_order = ```
+			
+			VAR YearNum = VALUE(sets[year_release])
+			RETURN 
+			FLOOR(YearNum, 10)
+			```
+		formatString: 0
+		lineageTag: c30f3f48-4f9f-442c-aea3-9ca2fa51d7a2
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column theme_name = LOOKUPVALUE('themes'[theme],'themes'[theme_id],sets[theme_id])
+		lineageTag: d9291a14-bc07-48d2-8fd0-5b174de5c1b5
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column bin_index =
+			
+			SWITCH(
+			    TRUE(),
+			    sets[number_of_parts] < 5, 1,
+			    sets[number_of_parts] < 10, 2,
+			    sets[number_of_parts] < 20, 3,
+			    sets[number_of_parts] < 30, 4,
+			    sets[number_of_parts] < 45, 5,
+			    sets[number_of_parts] < 60, 6,
+			    sets[number_of_parts] < 90, 7,
+			    sets[number_of_parts] < 120, 8,
+			    sets[number_of_parts] < 150, 9,
+			    sets[number_of_parts] < 220, 10,
+			    sets[number_of_parts] < 300, 11,
+			    sets[number_of_parts] < 400, 12,
+			    sets[number_of_parts] < 700, 13,
+			    sets[number_of_parts] < 1500, 14,
+			    15
+			)
+		formatString: 0
+		lineageTag: 90a03b6d-bdde-4ffb-8ee6-153987ef372f
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column complexity_tier =
+			
+			SWITCH(
+			    TRUE(),
+			    sets[bin_index] <= 3, "Micro",
+			    sets[bin_index] <= 7, "Small",
+			    sets[bin_index] <= 10, "Medium",
+			    sets[bin_index] <= 13, "Large",
+			    "Mega"
+			)
+		lineageTag: f42b91cd-59da-44d7-9c39-ce88ede24075
+		summarizeBy: none
+		sortByColumn: set_complexity_order
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_complexity_order = LOOKUPVALUE('Matrix Complex Set'[Set Comp Order],'Matrix Complex Set'[Set Complexity],sets[complexity_tier2])
+		formatString: 0
+		lineageTag: a915d580-79cf-455d-b1eb-73ecdbb979b7
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column complexity_tier2 =
+			
+			SWITCH(
+			    TRUE(),
+			    sets[bin_index] <= 3, "Micro",
+			    sets[bin_index] <= 7, "Small",
+			    sets[bin_index] <= 10, "Medium",
+			    sets[bin_index] <= 13, "Large",
+			    "Mega"
+			)
+		lineageTag: e784272c-5ea8-4ef4-bda3-e9dc53ac1375
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_minifigs =
+			
+			VAR txt = TRIM(sets[mini_figures])
+			VAR CountSeparator =
+			    DIVIDE(
+			        LEN(txt) - LEN(SUBSTITUTE(txt, "||", "")),
+			        2
+			    )
+			RETURN
+			COALESCE(CountSeparator, 0)
+		formatString: 0
+		lineageTag: a02e20f7-e6a5-4bce-ad0f-c7568d8ab67e
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column minifig_tier =
+			
+			SWITCH(
+			    TRUE(),
+			    sets[total_minifigs] = 0, "None",
+			    sets[total_minifigs] = 1, "Solo",
+			    sets[total_minifigs] <= 3, "Small Crew",
+			    sets[total_minifigs] <= 6, "Squad",
+			    "Large Cast"
+			)
+		lineageTag: 77b08f60-170b-44d3-a982-34f9bd7eeb79
+		summarizeBy: none
+		sortByColumn: minifig_tier_order
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column mini_figures_images =
+			
+			VAR Names = SUMMARIZE(RELATEDTABLE('inventories'), 'inventories'[mini_figures_image])
+			RETURN
+			CONCATENATEX(Names, 'inventories'[mini_figures_image], "||")
+		lineageTag: b0490fd7-f249-4554-925c-d774d43474f1
+		dataCategory: ImageUrl
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'First Minifig Image' =
+			
+			VAR txt =
+			    IF(
+			        LEFT(sets[mini_figures_images], 2) = "||",
+			        MID(sets[mini_figures_images], 3, LEN(sets[mini_figures_images])),
+			        sets[mini_figures_images]
+			    )
+			
+			RETURN
+			PATHITEM(
+			    SUBSTITUTE(txt, "||", "|"),
+			    1,
+			    TEXT
+			)
+		lineageTag: 164a5f5f-00db-437f-8f9c-d3542cb93e71
+		dataCategory: ImageUrl
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_colors =
+			
+			VAR Names = SUMMARIZE(RELATEDTABLE('inventories'), inventories[set_colors])
+			RETURN
+			CONCATENATEX(Names, inventories[set_colors], "||")
+		lineageTag: a779019b-782a-4dc0-9670-650baf1c79b3
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_colors =
+			
+			VAR txt = TRIM(sets[set_colors])
+			VAR CountSeparator =
+			    DIVIDE(
+			        LEN(txt) - LEN(SUBSTITUTE(txt, "||", "")),
+			        2
+			    )
+			RETURN
+			COALESCE(CountSeparator, 0)
+		lineageTag: 850d77b6-b913-4c96-97c6-372892617d52
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column color_group =
+			
+			VAR c = [set_colors]
+			RETURN
+			SWITCH(
+			    TRUE(),
+			    'sets'[set_colors] = BLANK(),BLANK(),
+			    CONTAINSSTRING(c,"Unknown") || CONTAINSSTRING(c,"No Color") || CONTAINSSTRING(c,"Any Color"), "Other",
+			    CONTAINSSTRING(c,"Glow In Dark White") || CONTAINSSTRING(c,"Glow In Dark Opaque") || CONTAINSSTRING(c,"Milky White"), "White",
+			    CONTAINSSTRING(c,"Glow In Dark"), "Other",
+			    CONTAINSSTRING(c,"Blue-Violet") || CONTAINSSTRING(c,"Bluish Violet") || CONTAINSSTRING(c,"Reddish Lilac"), "Purple",
+			    CONTAINSSTRING(c,"Yellowish Green"), "Green",
+			    CONTAINSSTRING(c,"Reddish Orange") || CONTAINSSTRING(c,"Yellowish Orange") || CONTAINSSTRING(c,"Terracotta") || CONTAINSSTRING(c,"Rust"), "Orange",
+			    CONTAINSSTRING(c,"Reddish Brown"), "Brown",
+			    CONTAINSSTRING(c,"Reddish Gold") || CONTAINSSTRING(c,"Lemon") || CONTAINSSTRING(c,"Curry") || CONTAINSSTRING(c,"Ochre") || CONTAINSSTRING(c,"Gold"), "Yellow",
+			    CONTAINSSTRING(c,"Sand Green"), "Green",
+			    CONTAINSSTRING(c,"Sand Blue"), "Blue",
+			    CONTAINSSTRING(c,"Sand Red"), "Red",
+			    CONTAINSSTRING(c,"Sand Purple"), "Purple",
+			    CONTAINSSTRING(c,"Blue-Gray") || CONTAINSSTRING(c,"Titanium") || CONTAINSSTRING(c,"Silver"), "Gray",
+			    CONTAINSSTRING(c,"Warm Tan") || CONTAINSSTRING(c,"Buff") || CONTAINSSTRING(c,"Nougat"), "Tan",
+			    CONTAINSSTRING(c,"Brass") || CONTAINSSTRING(c,"Copper"), "Brown",
+			    CONTAINSSTRING(c,"Coral") || CONTAINSSTRING(c,"Salmon") || CONTAINSSTRING(c,"Rose") || CONTAINSSTRING(c,"Magenta") || CONTAINSSTRING(c,"Pink"), "Pink",
+			    CONTAINSSTRING(c,"Clear"), "Other",
+			    c = "Metal", "Gray",
+			    CONTAINSSTRING(c,"Turquoise") || CONTAINSSTRING(c,"Aqua") || CONTAINSSTRING(c,"Azure") || CONTAINSSTRING(c,"Cyan") || CONTAINSSTRING(c,"Teal"), "Turquoise",
+			    CONTAINSSTRING(c,"Violet") || CONTAINSSTRING(c,"Lavender") || CONTAINSSTRING(c,"Lilac") || CONTAINSSTRING(c,"Purple"), "Purple",
+			    CONTAINSSTRING(c,"Lime") || CONTAINSSTRING(c,"Olive") || CONTAINSSTRING(c,"Green"), "Green",
+			    CONTAINSSTRING(c,"Yellow"), "Yellow",
+			    CONTAINSSTRING(c,"Orange"), "Orange",
+			    CONTAINSSTRING(c,"Red"), "Red",
+			    CONTAINSSTRING(c,"Tan"), "Tan",
+			    CONTAINSSTRING(c,"Brown") || CONTAINSSTRING(c,"Umber") || CONTAINSSTRING(c,"Sienna"), "Brown",
+			    CONTAINSSTRING(c,"Black"), "Black",
+			    CONTAINSSTRING(c,"White"), "White",
+			    CONTAINSSTRING(c,"Gray") || CONTAINSSTRING(c,"Grey"), "Gray",
+			    CONTAINSSTRING(c,"Blue"), "Blue",
+			    "Other"
+			)
+		lineageTag: 55757b2a-7b01-4712-9afa-78837550f947
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column transparent_colors = COALESCE(LOOKUPVALUE('colors'[Is transparent],colors[Color],sets[set_colors]),BLANK())
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 4c86dd9d-93f0-4601-bc0e-766f67c6bead
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column color_super_group =
+			
+			VAR c = [set_colors]
+			RETURN
+			    SWITCH(
+			        TRUE(),
+			        sets[set_colors] = BLANK(),BLANK(),
+			        [transparent_colors] = TRUE(), "Transparent",
+			
+			        CONTAINSSTRING(c,"Chrome") || CONTAINSSTRING(c,"Pearl") || CONTAINSSTRING(c,"Metallic")
+			            || CONTAINSSTRING(c,"Speckle") || CONTAINSSTRING(c,"Two-tone") || CONTAINSSTRING(c,"Flat")
+			            || c = "Metal", "Metallic",
+			
+			        CONTAINSSTRING(c,"Black") || CONTAINSSTRING(c,"White") || CONTAINSSTRING(c,"Gray")
+			            || CONTAINSSTRING(c,"Grey") || CONTAINSSTRING(c,"Titanium") || CONTAINSSTRING(c,"Unknown")
+			            || CONTAINSSTRING(c,"No Color") || CONTAINSSTRING(c,"Clear") || CONTAINSSTRING(c,"Glow In Dark") || CONTAINSSTRING(c,"Other"),
+			            "Neutral",
+			
+			        CONTAINSSTRING(c,"Brown") || CONTAINSSTRING(c,"Tan") || CONTAINSSTRING(c,"Nougat")
+			            || CONTAINSSTRING(c,"Copper") || CONTAINSSTRING(c,"Rust") || CONTAINSSTRING(c,"Sienna")
+			            || CONTAINSSTRING(c,"Umber") || CONTAINSSTRING(c,"Terracotta") || CONTAINSSTRING(c,"Buff"),
+			            "Earth",
+			
+			        CONTAINSSTRING(c,"Blue") || CONTAINSSTRING(c,"Green") || CONTAINSSTRING(c,"Purple")
+			            || CONTAINSSTRING(c,"Violet") || CONTAINSSTRING(c,"Lavender") || CONTAINSSTRING(c,"Lilac")
+			            || CONTAINSSTRING(c,"Turquoise") || CONTAINSSTRING(c,"Aqua") || CONTAINSSTRING(c,"Azure")
+			            || CONTAINSSTRING(c,"Cyan") || CONTAINSSTRING(c,"Teal") || CONTAINSSTRING(c,"Lime")
+			            || CONTAINSSTRING(c,"Olive"),
+			            "Cool",
+			        "Primary"
+			    )
+		lineageTag: c5010c9e-8e75-46ad-8ab1-247697b4fa84
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Group Representative Hex' =
+			
+			SWITCH(
+			    [color_group],
+			    "Black",     "#05131D",
+			    "Blue",      "#5A93DB",
+			    "Brown",     "#583927",
+			    "Gray",      "#A0A5A9",
+			    "Green",     "#237841",
+			    "Orange",    "#FE8A18",
+			    "Other",     "#CCCCCC",
+			    "Pink",      "#FC97AC",
+			    "Purple",    "#81007B",
+			    "Red",       "#C91A09",
+			    "Tan",       "#E4CD9E",
+			    "Turquoise", "#008F9B",
+			    "White",     "#FFFFFF",
+			    "Yellow",    "#F2CD37",
+			    "#CCCCCC"
+			)
+		lineageTag: cf3d9b74-cca8-49f0-bbd3-56cac6dce6e2
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column color_variety_tier =
+			
+			SWITCH(
+			    TRUE(),
+			    sets[total_colors] <= 8,  "Minimal",
+			    sets[total_colors] <= 16, "Basic",
+			    sets[total_colors] <= 28, "Balanced",
+			    sets[total_colors] <= 45, "Colorful",
+			    "Rainbow"
+			)
+		lineageTag: ed1b0b4e-8b7c-431c-b7d4-a7577e52ab2c
+		summarizeBy: none
+		sortByColumn: color_variety_order
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column color_variety_order =
+			
+			SWITCH(
+			    TRUE(),
+			    sets[total_colors] <= 8,  1,
+			    sets[total_colors] <= 16, 2,
+			    sets[total_colors] <= 28, 3,
+			    sets[total_colors] <= 45, 4,
+			    5
+			)
+		formatString: 0
+		lineageTag: 93844fde-c01f-4e39-9a72-13992a5e60a6
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_colors_rgb =
+			
+			VAR Names = SUMMARIZE(RELATEDTABLE('inventories'), inventories[set_colors_rgb])
+			RETURN
+			CONCATENATEX(Names, inventories[set_colors_rgb], "||")
+		lineageTag: f0ee4450-c359-4a41-a496-ee7feebb2a3d
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column parts_number =
+			
+			VAR Names = SUMMARIZE(RELATEDTABLE('inventories'), 'inventories'[part_number])
+			RETURN
+			CONCATENATEX(Names, 'inventories'[part_number], "||")
+		lineageTag: c36b6f60-fc65-4c24-95dd-2cb26fcebe3d
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column distinct_count_parts =
+			
+			VAR txt = SUBSTITUTE ( TRIM ( sets[parts_number] ), "||", "|" )
+			VAR NumTokens = IF ( txt = "" || ISBLANK ( txt ), 0, PATHLENGTH ( txt ) )
+			VAR TokenTable =
+			    ADDCOLUMNS (
+			        GENERATESERIES ( 1, NumTokens, 1 ),
+			        "PartNum", PATHITEM ( txt, [Value], TEXT )
+			    )
+			RETURN
+			    COALESCE ( COUNTROWS ( DISTINCT ( SELECTCOLUMNS ( TokenTable, "PartNum", [PartNum] ) ) ), 0 )
+		lineageTag: db96ecd6-5f4b-41c6-a87b-c035da435a33
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column part_variety_tier =
+			
+			VAR v = sets[distinct_count_parts]
+			RETURN
+			    SWITCH (
+			        TRUE (),
+			        v = 0,   "None",
+			        v <= 7,   "Simple Build",
+			        v <= 22,  "Mixed Build",
+			        v <= 62,  "Varied Build",
+			        "Complex Assembly"
+			    )
+		lineageTag: 344775a9-9fcf-4f8e-ba2a-c6a3d9c92516
+		summarizeBy: none
+		sortByColumn: part_variety_tier_order
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column part_variety_tier_order =
+			
+			VAR v = sets[distinct_count_parts]
+			RETURN
+			    SWITCH (
+			        TRUE (),
+			        v = 0,   1,
+			        v <= 7,   2,
+			        v <= 22,  3,
+			        v <= 62,  4,
+			        5
+			    )
+		formatString: 0
+		lineageTag: 933918c4-9442-4780-a37b-6f331c22ee23
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_color_age =
+			
+			VAR Names = SUMMARIZE(RELATEDTABLE('inventories'), 'inventories'[set_color_age])
+			RETURN
+			CONCATENATEX(Names, 'inventories'[set_color_age], "||")
+		lineageTag: 8ebd6cab-81c6-45a3-9d1e-1fc0e0e5c7b4
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column avg_color_age =
+			
+			VAR txt0 = SUBSTITUTE ( TRIM ( sets[set_color_age] ), "||", "|" )
+			VAR txt =
+			    IF ( LEFT ( txt0, 1 ) = "|", MID ( txt0, 2, LEN ( txt0 ) - 1 ), txt0 )
+			VAR NumTokens = IF ( txt = "" || ISBLANK ( txt ), 0, PATHLENGTH ( txt ) )
+			VAR TokenTable =
+			    FILTER (
+			        ADDCOLUMNS (
+			            GENERATESERIES ( 1, NumTokens, 1 ),
+			            "NumericValue",
+			                IFERROR ( VALUE ( PATHITEM ( txt, [Value], TEXT ) ), BLANK () )
+			        ),
+			        NOT ISBLANK ( [NumericValue] )
+			    )
+			RETURN
+			    COALESCE ( AVERAGEX ( TokenTable, [NumericValue] ), 0 )
+		lineageTag: 86f6c800-8627-40c8-a4d3-46e19e26fbc2
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column color_age_tier =
+			
+			VAR v = sets[avg_color_age]
+			RETURN
+			    SWITCH (
+			        TRUE (),
+			        v = 0,   "None",
+			        v <= 15, "Young Age",
+			        v <= 35, "Modern Age",
+			        v <= 45, "Mature Age",
+			        "Old Age"
+			    )
+		lineageTag: 42a00033-cf9e-439d-a55d-3211a55ee5f9
+		summarizeBy: none
+		sortByColumn: color_age_tier_order
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column color_age_tier_order =
+			
+			VAR v = sets[avg_color_age]
+			RETURN
+			    SWITCH (
+			        TRUE (),
+			        v = 0,     5,
+			        v <= 15,    4,
+			        v <= 35, 3,
+			        v <= 45, 2,
+			        1
+			    )
+		formatString: 0
+		lineageTag: 2f83e635-9f98-4185-b5f8-b0b737b1702e
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column minifig_tier_order =
+			
+			SWITCH(
+			    TRUE(),
+			    sets[total_minifigs] = 0, 1,
+			    sets[total_minifigs] = 1, 2,
+			    sets[total_minifigs] <= 3, 3,
+			    sets[total_minifigs] <= 6, 4,
+			    5
+			)
+		formatString: 0
+		lineageTag: da9e5a36-5a89-44ad-a037-ff2bceb2242f
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Weighted Similarity' =
+			
+			'sets'[set_complexity_order] * 0.25 / 5 +
+			'sets'[part_variety_tier_order] * 0.20 /5+
+			'sets'[color_variety_order] * 0.20 /5+
+			'sets'[minifig_tier_order] * 0.20 /5+
+			'sets'[color_age_tier_order] * 0.15 /5
+		lineageTag: aeb122c0-8d49-45ad-9ca6-92c3a98a2f5b
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Theme Name' = RELATED(themes[theme])
+		lineageTag: 09463d96-20b1-4c13-8272-4f0af2111da7
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Theme Level 1' = RELATED('themes'[Theme Level 1])
+		lineageTag: af0267d9-f37d-499a-8ab0-335097914431
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_personality_description =
+			
+			VAR _SetName      = sets[set_name]
+			VAR _Complexity   = sets[complexity_tier]
+			VAR _Minifig      = sets[minifig_tier]
+			VAR _ColorVariety = sets[color_variety_tier]
+			VAR _PartVariety  = sets[part_variety_tier]
+			VAR _ColorAge     = sets[color_age_tier]
+			VAR _Quote        = UNICHAR(34)
+			
+			-- ============================================
+			-- === COMPONENT-LEVEL DESCRIPTIONS ===========
+			-- ============================================
+			
+			VAR _ComplexityText =
+			    SWITCH(
+			        _Complexity,
+			        "Micro",  "a bite-sized build",
+			        "Small",  "a compact build",
+			        "Medium", "a mid-sized build",
+			        "Large",  "a substantial build",
+			        "Mega",   "a monumental build",
+			        "a build of unknown scale"
+			    )
+			
+			VAR _MinifigText =
+			    SWITCH(
+			        _Minifig,
+			        "None",       "no minifigures",
+			        "Solo",       "a single character",
+			        "Small Crew", "a small cast",
+			        "Squad",      "a full crew",
+			        "Large Cast", "an ensemble cast",
+			        "no cast info"
+			    )
+			
+			VAR _ColorVarietyText =
+			    SWITCH(
+			        _ColorVariety,
+			        "Minimal",  "a restrained palette",
+			        "Basic",    "a modest palette",
+			        "Balanced", "a well-rounded palette",
+			        "Colorful", "a vivid palette",
+			        "Rainbow",  "an expansive palette",
+			        "an unclassified palette"
+			    )
+			
+			VAR _PartVarietyText =
+			    SWITCH(
+			        _PartVariety,
+			        "None",             "no distinct parts recorded",
+			        "Simple Build",     "uses just a handful of unique parts",
+			        "Mixed Build",      "combines a modest mix of unique parts",
+			        "Varied Build",     "draws from a diverse range of unique parts",
+			        "Complex Assembly", "assembles a highly varied set of unique parts",
+			        "unknown part variety"
+			    )
+			
+			VAR _ColorAgeText =
+			    SWITCH(
+			        _ColorAge,
+			        "None",       "with no color-age data",
+			        "Young Age",  "using the newest colors in LEGO's catalog",
+			        "Modern Age", "leaning on modern-era colors",
+			        "Mature Age", "featuring well-established colors",
+			        "Old Age",    "drawing from classic, long-standing colors",
+			        "with unspecified color age"
+			    )
+			
+			-- ============================================
+			-- === ARCHETYPE (character summary) ==========
+			-- ============================================
+			
+			VAR _Archetype =
+			    SWITCH(
+			        TRUE(),
+			        _Complexity IN { "Large", "Mega" } && _Minifig IN { "Squad", "Large Cast" },
+			            "an epic display centerpiece",
+			
+			        _Complexity IN { "Large", "Mega" } && _Minifig IN { "None", "Solo" },
+			            "a collector's showpiece",
+			
+			        _Complexity IN { "Small", "Medium" } && _Minifig IN { "Small Crew", "Squad" },
+			            "a character-driven playset",
+			
+			        _Complexity = "Micro" && _Minifig = "None",
+			            "a small accessory build",
+			
+			        _ColorAge = "Old Age" && _ColorVariety IN { "Minimal", "Basic" },
+			            "a classic-era throwback",
+			
+			        _ColorAge IN { "Young Age", "Modern Age" } && _ColorVariety IN { "Colorful", "Rainbow" },
+			            "a modern-era statement",
+			
+			        "a well-balanced set"
+			    )
+			
+			-- ============================================
+			-- === FINAL NARRATIVE (with set name) ========
+			-- ============================================
+			
+			RETURN
+			    _Quote & _SetName & _Quote & " is " & _Archetype & " — " & _ComplexityText &
+			    " with " & _MinifigText & ", " &
+			    _PartVarietyText & ", and " &
+			    _ColorVarietyText & " " & _ColorAgeText & "."
+		lineageTag: d8b9c3ae-1180-495c-b68b-acf9077204e3
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy 'color_super_group Hierarchy'
+		lineageTag: 894d515b-b3b4-4d91-a401-26517d21d81b
+
+		level color_super_group
+			lineageTag: 5176453e-cf21-4959-835e-e6789cdd2506
+			column: color_super_group
+
+		level color_group
+			lineageTag: cbbba332-6e53-4b8b-8b97-73dc25798e4d
+			column: color_group
+
+		level set_colors
+			lineageTag: 89753fff-24d7-48c0-829b-cd635c0a6abd
+			column: set_colors
+
+	partition sets = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\kanzi\Documents\Data Challenge\Power BI Data Championship\World Champs BCN 26 Round 2\Data\sets.csv"),[Delimiter=",", Columns=6, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"set_num", type text}, {"name", type text}, {"year", Int64.Type}, {"theme_id", Int64.Type}, {"num_parts", Int64.Type}, {"img_url", type text}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"name", "set_name"}, {"num_parts", "number_of_parts"}}),
+				    #"Added Custom" = Table.AddColumn(#"Renamed Columns", "decade", each Number.ToText(Number.IntegerDivide([year], 10) * 10) & "s", type text),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Added Custom",{{"set_num", "set_number"}, {"year", "year_release"}}),
+				    #"Filtered Rows" = Table.SelectRows(#"Renamed Columns1", each ([year_release] <> 1949 and [year_release] <> 2026 and [year_release] <> 2027))
+				in
+				    #"Filtered Rows"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

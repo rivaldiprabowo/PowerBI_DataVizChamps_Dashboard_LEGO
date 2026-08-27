@@ -1,0 +1,186 @@
+{
+  "triggerPrompts": [
+    {
+      "prompt": "How many sets were released each year?"
+    },
+    {
+      "prompt": "How many sets were released in each decade?"
+    },
+    {
+      "prompt": "How do the number of sets change over the years?"
+    }
+  ],
+  "contactObjectId": "6feaf25f-395e-413a-ae8b-5a9fd79329db",
+  "sourceMetadata": {
+    "visualMetadata": {
+      "themeCollection": {
+        "baseTheme": {
+          "name": "Fluent2-CY26SU05",
+          "reportVersionAtImport": {
+            "visual": "2.9.0",
+            "report": "3.3.0",
+            "page": "2.3.1"
+          },
+          "type": "SharedResources"
+        },
+        "customTheme": {
+          "name": "Accessible_City_park5942914118805086.json",
+          "reportVersionAtImport": {
+            "visual": "2.10.0",
+            "report": "3.4.0",
+            "page": "2.3.1"
+          },
+          "type": "RegisteredResources"
+        }
+      },
+      "resourcePackages": [
+        {
+          "name": "SharedResources",
+          "type": "SharedResources",
+          "items": [
+            {
+              "name": "Fluent2-CY26SU05",
+              "path": "ResourcePackages/SharedResources/322a48dd7ff762b21bce9f05cd2b811e1d18016f686da4d09250916c6389ac4f-Fluent2-CY26SU05.json",
+              "type": "BaseTheme"
+            }
+          ]
+        },
+        {
+          "name": "RegisteredResources",
+          "type": "RegisteredResources",
+          "items": [
+            {
+              "name": "Accessible_City_park5942914118805086.json",
+              "path": "ResourcePackages/RegisteredResources/1a977a7b815f07f64c1844221dc11ce5aef55e8b56a60c616066d0584a56a9db-Accessible_City_park5942914118805086.json",
+              "type": "CustomTheme"
+            }
+          ]
+        }
+      ],
+      "cache": {
+        "key": "JTdCJTIydmlzdWFsVHlwZSUyMiUzQSUyMmxpbmVDbHVzdGVyZWRDb2x1bW5Db21ib0NoYXJ0JTIyJTJDJTIycXVlcnklMjIlM0ElN0IlMjJxdWVyeVN0YXRlJTIyJTNBJTdCJTIyQ2F0ZWdvcnklMjIlM0ElN0IlMjJwcm9qZWN0aW9ucyUyMiUzQSU1QiU3QiUyMmZpZWxkJTIyJTNBJTdCJTIyQ29sdW1uJTIyJTNBJTdCJTIyRXhwcmVzc2lvbiUyMiUzQSU3QiUyMlNvdXJjZVJlZiUyMiUzQSU3QiUyMkVudGl0eSUyMiUzQSUyMnNldHMlMjIlN0QlN0QlMkMlMjJQcm9wZXJ0eSUyMiUzQSUyMkRlY2FkZSUyMiU3RCU3RCUyQyUyMnF1ZXJ5UmVmJTIyJTNBJTIyc2V0cy5EZWNhZGUlMjIlMkMlMjJuYXRpdmVRdWVyeVJlZiUyMiUzQSUyMkRlY2FkZSUyMiUyQyUyMmFjdGl2ZSUyMiUzQWZhbHNlJTdEJTJDJTdCJTIyZmllbGQlMjIlM0ElN0IlMjJDb2x1bW4lMjIlM0ElN0IlMjJFeHByZXNzaW9uJTIyJTNBJTdCJTIyU291cmNlUmVmJTIyJTNBJTdCJTIyRW50aXR5JTIyJTNBJTIyc2V0cyUyMiU3RCU3RCUyQyUyMlByb3BlcnR5JTIyJTNBJTIyeWVhciUyMiU3RCU3RCUyQyUyMnF1ZXJ5UmVmJTIyJTNBJTIyc2V0cy55ZWFyJTIyJTJDJTIybmF0aXZlUXVlcnlSZWYlMjIlM0ElMjJ5ZWFyJTIyJTJDJTIyYWN0aXZlJTIyJTNBdHJ1ZSU3RCU1RCU3RCUyQyUyMlRvb2x0aXBzJTIyJTNBJTdCJTIycHJvamVjdGlvbnMlMjIlM0ElNUIlN0IlMjJmaWVsZCUyMiUzQSU3QiUyMk1lYXN1cmUlMjIlM0ElN0IlMjJFeHByZXNzaW9uJTIyJTNBJTdCJTIyU291cmNlUmVmJTIyJTNBJTdCJTIyRW50aXR5JTIyJTNBJTIyX01lYXN1cmVzJTIyJTdEJTdEJTJDJTIyUHJvcGVydHklMjIlM0ElMjJBdmVyYWdlJTIwUGFydHMlMjBwZXIlMjBTZXQlMjIlN0QlN0QlMkMlMjJxdWVyeVJlZiUyMiUzQSUyMl9NZWFzdXJlcy5QYXJ0cyUyMHBlciUyMFNldCUyMiUyQyUyMm5hdGl2ZVF1ZXJ5UmVmJTIyJTNBJTIyQXZlcmFnZSUyMFBhcnRzJTIwcGVyJTIwU2V0JTIyJTdEJTVEJTdEJTJDJTIyWSUyMiUzQSU3QiUyMnByb2plY3Rpb25zJTIyJTNBJTVCJTdCJTIyZmllbGQlMjIlM0ElN0IlMjJNZWFzdXJlJTIyJTNBJTdCJTIyRXhwcmVzc2lvbiUyMiUzQSU3QiUyMlNvdXJjZVJlZiUyMiUzQSU3QiUyMkVudGl0eSUyMiUzQSUyMl9NZWFzdXJlcyUyMiU3RCU3RCUyQyUyMlByb3BlcnR5JTIyJTNBJTIyU2V0cyUyMiU3RCU3RCUyQyUyMnF1ZXJ5UmVmJTIyJTNBJTIyX01lYXN1cmVzLlNldHMlMjIlMkMlMjJuYXRpdmVRdWVyeVJlZiUyMiUzQSUyMlNldHMlMjIlN0QlNUQlN0QlMkMlMjJZMiUyMiUzQSU3QiUyMnByb2plY3Rpb25zJTIyJTNBJTVCJTdCJTIyZmllbGQlMjIlM0ElN0IlMjJNZWFzdXJlJTIyJTNBJTdCJTIyRXhwcmVzc2lvbiUyMiUzQSU3QiUyMlNvdXJjZVJlZiUyMiUzQSU3QiUyMkVudGl0eSUyMiUzQSUyMl9NZWFzdXJlcyUyMiU3RCU3RCUyQyUyMlByb3BlcnR5JTIyJTNBJTIyQXZlcmFnZSUyMFBhcnRzJTIwcGVyJTIwU2V0JTIyJTdEJTdEJTJDJTIycXVlcnlSZWYlMjIlM0ElMjJfTWVhc3VyZXMuUGFydHMlMjBwZXIlMjBTZXQlMjIlMkMlMjJuYXRpdmVRdWVyeVJlZiUyMiUzQSUyMkF2ZXJhZ2UlMjBQYXJ0cyUyMHBlciUyMFNldCUyMiU3RCU1RCU3RCU3RCUyQyUyMnNvcnREZWZpbml0aW9uJTIyJTNBJTdCJTIyc29ydCUyMiUzQSU1QiU3QiUyMmZpZWxkJTIyJTNBJTdCJTIyQ29sdW1uJTIyJTNBJTdCJTIyRXhwcmVzc2lvbiUyMiUzQSU3QiUyMlNvdXJjZVJlZiUyMiUzQSU3QiUyMkVudGl0eSUyMiUzQSUyMnNldHMlMjIlN0QlN0QlMkMlMjJQcm9wZXJ0eSUyMiUzQSUyMnllYXIlMjIlN0QlN0QlMkMlMjJkaXJlY3Rpb24lMjIlM0ElMjJBc2NlbmRpbmclMjIlN0QlNUQlN0QlN0QlMkMlMjJvYmplY3RzJTIyJTNBJTdCJTIyY2F0ZWdvcnlBeGlzJTIyJTNBJTVCJTdCJTIycHJvcGVydGllcyUyMiUzQSU3QiUyMmZvbnRTaXplJTIyJTNBJTdCJTIyZXhwciUyMiUzQSU3QiUyMkxpdGVyYWwlMjIlM0ElN0IlMjJWYWx1ZSUyMiUzQSUyMjE0RCUyMiU3RCU3RCU3RCU3RCU3RCU1RCUyQyUyMnZhbHVlQXhpcyUyMiUzQSU1QiU3QiUyMnByb3BlcnRpZXMlMjIlM0ElN0IlMjJmb250U2l6ZSUyMiUzQSU3QiUyMmV4cHIlMjIlM0ElN0IlMjJMaXRlcmFsJTIyJTNBJTdCJTIyVmFsdWUlMjIlM0ElMjIxNEQlMjIlN0QlN0QlN0QlN0QlN0QlNUQlN0QlMkMlMjJ2aXN1YWxDb250YWluZXJPYmplY3RzJTIyJTNBJTdCJTIydGl0bGUlMjIlM0ElNUIlN0IlMjJwcm9wZXJ0aWVzJTIyJTNBJTdCJTIyZm9udFNpemUlMjIlM0ElN0IlMjJleHByJTIyJTNBJTdCJTIyTGl0ZXJhbCUyMiUzQSU3QiUyMlZhbHVlJTIyJTNBJTIyMTZEJTIyJTdEJTdEJTdEJTdEJTdEJTVEJTJDJTIyc3ViVGl0bGUlMjIlM0ElNUIlN0IlMjJwcm9wZXJ0aWVzJTIyJTNBJTdCJTIyc2hvdyUyMiUzQSU3QiUyMmV4cHIlMjIlM0ElN0IlMjJMaXRlcmFsJTIyJTNBJTdCJTIyVmFsdWUlMjIlM0ElMjJmYWxzZSUyMiU3RCU3RCU3RCU3RCU3RCU1RCU3RCU3RCU3QiUyMmZpbHRlcnMlMjIlM0ElNUIlN0IlMjJuYW1lJTIyJTNBJTIyMTRkNjQ1YmE4YjBiMmE3YmM4NGIlMjIlMkMlMjJmaWVsZCUyMiUzQSU3QiUyMkNvbHVtbiUyMiUzQSU3QiUyMkV4cHJlc3Npb24lMjIlM0ElN0IlMjJTb3VyY2VSZWYlMjIlM0ElN0IlMjJFbnRpdHklMjIlM0ElMjJzZXRzJTIyJTdEJTdEJTJDJTIyUHJvcGVydHklMjIlM0ElMjJEZWNhZGUlMjIlN0QlN0QlMkMlMjJ0eXBlJTIyJTNBJTIyQ2F0ZWdvcmljYWwlMjIlMkMlMjJmaWx0ZXIlMjIlM0ElN0IlMjJWZXJzaW9uJTIyJTNBMiUyQyUyMkZyb20lMjIlM0ElNUIlN0IlMjJOYW1lJTIyJTNBJTIycyUyMiUyQyUyMkVudGl0eSUyMiUzQSUyMnNldHMlMjIlMkMlMjJUeXBlJTIyJTNBMCU3RCU1RCUyQyUyMldoZXJlJTIyJTNBJTVCJTdCJTIyQ29uZGl0aW9uJTIyJTNBJTdCJTIyTm90JTIyJTNBJTdCJTIyRXhwcmVzc2lvbiUyMiUzQSU3QiUyMkluJTIyJTNBJTdCJTIyRXhwcmVzc2lvbnMlMjIlM0ElNUIlN0IlMjJDb2x1bW4lMjIlM0ElN0IlMjJFeHByZXNzaW9uJTIyJTNBJTdCJTIyU291cmNlUmVmJTIyJTNBJTdCJTIyU291cmNlJTIyJTNBJTIycyUyMiU3RCU3RCUyQyUyMlByb3BlcnR5JTIyJTNBJTIyRGVjYWRlJTIyJTdEJTdEJTVEJTJDJTIyVmFsdWVzJTIyJTNBJTVCJTVCJTdCJTIyTGl0ZXJhbCUyMiUzQSU3QiUyMlZhbHVlJTIyJTNBJTIybnVsbCUyMiU3RCU3RCU1RCU1RCU3RCU3RCU3RCU3RCU3RCU1RCU3RCUyQyUyMmlzTG9ja2VkSW5WaWV3TW9kZSUyMiUzQXRydWUlMkMlMjJvYmplY3RzJTIyJTNBJTdCJTIyZ2VuZXJhbCUyMiUzQSU1QiU3QiUyMnByb3BlcnRpZXMlMjIlM0ElN0IlMjJpc0ludmVydGVkU2VsZWN0aW9uTW9kZSUyMiUzQSU3QiUyMmV4cHIlMjIlM0ElN0IlMjJMaXRlcmFsJTIyJTNBJTdCJTIyVmFsdWUlMjIlM0ElMjJ0cnVlJTIyJTdEJTdEJTdEJTdEJTdEJTVEJTdEJTdEJTVEJTdE",
+        "query": {
+          "Query": {
+            "Version": 2,
+            "From": [
+              {
+                "Name": "s",
+                "Entity": "sets"
+              },
+              {
+                "Name": "_",
+                "Entity": "_Measures"
+              }
+            ],
+            "Where": [
+              {
+                "Condition": {
+                  "Not": {
+                    "Expression": {
+                      "In": {
+                        "Expressions": [
+                          {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Source": "s"
+                                }
+                              },
+                              "Property": "Decade"
+                            }
+                          }
+                        ],
+                        "Values": [
+                          [
+                            {
+                              "Literal": {
+                                "Value": "null"
+                              }
+                            }
+                          ]
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "OrderBy": [],
+            "Select": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Source": "s"
+                    }
+                  },
+                  "Property": "Decade"
+                },
+                "NativeReferenceName": "Decade",
+                "Name": "sets.Decade"
+              },
+              {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Source": "_"
+                    }
+                  },
+                  "Property": "Sets"
+                },
+                "NativeReferenceName": "Sets",
+                "Name": "_Measures.Sets"
+              },
+              {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Source": "_"
+                    }
+                  },
+                  "Property": "Average Parts per Set"
+                },
+                "NativeReferenceName": "Average Parts per Set",
+                "Name": "_Measures.Parts per Set"
+              },
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Source": "s"
+                    }
+                  },
+                  "Property": "year"
+                },
+                "NativeReferenceName": "year",
+                "Name": "sets.year"
+              }
+            ],
+            "GroupBy": []
+          },
+          "Binding": {
+            "Version": 1,
+            "Primary": {
+              "Groupings": [
+                {
+                  "Projections": [
+                    1,
+                    2,
+                    3
+                  ]
+                }
+              ]
+            },
+            "DataReduction": {
+              "Primary": {
+                "Sample": {}
+              },
+              "DataVolume": 4
+            }
+          }
+        }
+      }
+    }
+  },
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/verifiedAnswers/definition/2.0.0/schema.json"
+}

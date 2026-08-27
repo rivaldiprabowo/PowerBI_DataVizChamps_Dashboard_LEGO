@@ -1,0 +1,227 @@
+table colors
+	lineageTag: 73c2be08-b6e7-4d29-9706-b9e8bdabe661
+
+	column color_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 9b51ac1c-879b-4b11-9703-a281989a4feb
+		summarizeBy: none
+		sourceColumn: color_id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Color
+		dataType: string
+		lineageTag: 34d5e23f-3f22-469e-b57e-840b01401b79
+		summarizeBy: none
+		sourceColumn: Color
+
+		annotation SummarizationSetBy = Automatic
+
+	column rgb
+		dataType: string
+		lineageTag: 67d6af8d-91a1-481e-a588-b04385c97853
+		summarizeBy: none
+		sourceColumn: rgb
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Is transparent'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: a3363563-394a-4e91-8af1-7aecbb52c55f
+		summarizeBy: none
+		sourceColumn: Is transparent
+
+		annotation SummarizationSetBy = Automatic
+
+	column num_parts
+		dataType: int64
+		formatString: 0
+		lineageTag: 3871c41e-5a02-43c2-ab48-6341f5335cad
+		summarizeBy: none
+		sourceColumn: num_parts
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column num_sets
+		dataType: int64
+		formatString: 0
+		lineageTag: 6e42b3c2-5519-48cd-bec1-5cec76c21843
+		summarizeBy: none
+		sourceColumn: num_sets
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column year_release
+		dataType: int64
+		formatString: 0
+		lineageTag: f8eb16a2-d54c-4637-a632-06a36d445048
+		summarizeBy: none
+		sourceColumn: year_release
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column year_stop
+		dataType: int64
+		formatString: 0
+		lineageTag: 5c10cb39-e9f5-443a-b394-cd2b56ff896c
+		summarizeBy: none
+		sourceColumn: year_stop
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column year_exist = colors[year_stop] - colors[year_release]
+		formatString: 0
+		lineageTag: 805d2555-890d-49e5-9362-3d4d6119792f
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column color_group =
+			
+			VAR c = [Color]
+			RETURN
+			    SWITCH(
+			        TRUE(),
+			        CONTAINSSTRING(c,"Unknown") || CONTAINSSTRING(c,"No Color") || CONTAINSSTRING(c,"Any Color"), "Other",
+			        CONTAINSSTRING(c,"Glow In Dark White") || CONTAINSSTRING(c,"Glow In Dark Opaque") || CONTAINSSTRING(c,"Milky White"), "White",
+			        CONTAINSSTRING(c,"Glow In Dark"), "Other",
+			        CONTAINSSTRING(c,"Blue-Violet") || CONTAINSSTRING(c,"Bluish Violet") || CONTAINSSTRING(c,"Reddish Lilac"), "Purple",
+			        CONTAINSSTRING(c,"Yellowish Green"), "Green",
+			        CONTAINSSTRING(c,"Reddish Orange") || CONTAINSSTRING(c,"Yellowish Orange") || CONTAINSSTRING(c,"Terracotta") || CONTAINSSTRING(c,"Rust"), "Orange",
+			        CONTAINSSTRING(c,"Reddish Brown"), "Brown",
+			        CONTAINSSTRING(c,"Reddish Gold") || CONTAINSSTRING(c,"Lemon") || CONTAINSSTRING(c,"Curry") || CONTAINSSTRING(c,"Ochre") || CONTAINSSTRING(c,"Gold"), "Yellow",
+			        CONTAINSSTRING(c,"Sand Green"), "Green",
+			        CONTAINSSTRING(c,"Sand Blue"), "Blue",
+			        CONTAINSSTRING(c,"Sand Red"), "Red",
+			        CONTAINSSTRING(c,"Sand Purple"), "Purple",
+			        CONTAINSSTRING(c,"Blue-Gray") || CONTAINSSTRING(c,"Titanium") || CONTAINSSTRING(c,"Silver"), "Gray",
+			        CONTAINSSTRING(c,"Warm Tan") || CONTAINSSTRING(c,"Buff") || CONTAINSSTRING(c,"Nougat"), "Tan",
+			        CONTAINSSTRING(c,"Brass") || CONTAINSSTRING(c,"Copper"), "Brown",
+			        CONTAINSSTRING(c,"Coral") || CONTAINSSTRING(c,"Salmon") || CONTAINSSTRING(c,"Rose") || CONTAINSSTRING(c,"Magenta") || CONTAINSSTRING(c,"Pink"), "Pink",
+			        CONTAINSSTRING(c,"Clear"), "Other",
+			        c = "Metal", "Gray",
+			        CONTAINSSTRING(c,"Turquoise") || CONTAINSSTRING(c,"Aqua") || CONTAINSSTRING(c,"Azure") || CONTAINSSTRING(c,"Cyan") || CONTAINSSTRING(c,"Teal"), "Turquoise",
+			        CONTAINSSTRING(c,"Violet") || CONTAINSSTRING(c,"Lavender") || CONTAINSSTRING(c,"Lilac") || CONTAINSSTRING(c,"Purple"), "Purple",
+			        CONTAINSSTRING(c,"Lime") || CONTAINSSTRING(c,"Olive") || CONTAINSSTRING(c,"Green"), "Green",
+			        CONTAINSSTRING(c,"Yellow"), "Yellow",
+			        CONTAINSSTRING(c,"Orange"), "Orange",
+			        CONTAINSSTRING(c,"Red"), "Red",
+			        CONTAINSSTRING(c,"Tan"), "Tan",
+			        CONTAINSSTRING(c,"Brown") || CONTAINSSTRING(c,"Umber") || CONTAINSSTRING(c,"Sienna"), "Brown",
+			        CONTAINSSTRING(c,"Black"), "Black",
+			        CONTAINSSTRING(c,"White"), "White",
+			        CONTAINSSTRING(c,"Gray") || CONTAINSSTRING(c,"Grey"), "Gray",
+			        CONTAINSSTRING(c,"Blue"), "Blue",
+			        "Other"
+			    )
+		lineageTag: f8b6f3a4-695a-4ed2-8d86-2f5d89655855
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column color_super_group =
+			
+			VAR c = [Color]
+			RETURN
+			    SWITCH(
+			        TRUE(),
+			        [Is transparent] = TRUE(), "Transparent",
+			
+			        CONTAINSSTRING(c,"Chrome") || CONTAINSSTRING(c,"Pearl") || CONTAINSSTRING(c,"Metallic")
+			            || CONTAINSSTRING(c,"Speckle") || CONTAINSSTRING(c,"Two-tone") || CONTAINSSTRING(c,"Flat")
+			            || c = "Metal", "Metallic",
+			
+			        CONTAINSSTRING(c,"Black") || CONTAINSSTRING(c,"White") || CONTAINSSTRING(c,"Gray")
+			            || CONTAINSSTRING(c,"Grey") || CONTAINSSTRING(c,"Titanium") || CONTAINSSTRING(c,"Unknown")
+			            || CONTAINSSTRING(c,"No Color") || CONTAINSSTRING(c,"Clear") || CONTAINSSTRING(c,"Glow In Dark"),
+			            "Neutral",
+			
+			        CONTAINSSTRING(c,"Brown") || CONTAINSSTRING(c,"Tan") || CONTAINSSTRING(c,"Nougat")
+			            || CONTAINSSTRING(c,"Copper") || CONTAINSSTRING(c,"Rust") || CONTAINSSTRING(c,"Sienna")
+			            || CONTAINSSTRING(c,"Umber") || CONTAINSSTRING(c,"Terracotta") || CONTAINSSTRING(c,"Buff"),
+			            "Earth",
+			
+			        CONTAINSSTRING(c,"Blue") || CONTAINSSTRING(c,"Green") || CONTAINSSTRING(c,"Purple")
+			            || CONTAINSSTRING(c,"Violet") || CONTAINSSTRING(c,"Lavender") || CONTAINSSTRING(c,"Lilac")
+			            || CONTAINSSTRING(c,"Turquoise") || CONTAINSSTRING(c,"Aqua") || CONTAINSSTRING(c,"Azure")
+			            || CONTAINSSTRING(c,"Cyan") || CONTAINSSTRING(c,"Teal") || CONTAINSSTRING(c,"Lime")
+			            || CONTAINSSTRING(c,"Olive"),
+			            "Cool",
+			
+			        "Primary"
+			    )
+		lineageTag: f34b845b-829c-4bd3-8b8d-67798429041f
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Group Representative Hex' =
+			
+			SWITCH(
+			    [color_group],
+			    "Black",     "#05131D",
+			    "Blue",      "#5A93DB",
+			    "Brown",     "#583927",
+			    "Gray",      "#A0A5A9",
+			    "Green",     "#237841",
+			    "Orange",    "#FE8A18",
+			    "Other",     "#CCCCCC",
+			    "Pink",      "#FC97AC",
+			    "Purple",    "#81007B",
+			    "Red",       "#C91A09",
+			    "Tan",       "#E4CD9E",
+			    "Turquoise", "#008F9B",
+			    "White",     "#FFFFFF",
+			    "Yellow",    "#F2CD37",
+			    "#CCCCCC"
+			)
+		lineageTag: b96d2096-96dc-4468-acf6-d0a005eda5ec
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy 'Color Super Group Hierarchy'
+		lineageTag: 1dc4a1f5-5fce-4944-8da6-32f264783d20
+
+		level color_super_group
+			lineageTag: 087a2b3f-16cc-4fcb-961a-24386382e3f1
+			column: color_super_group
+
+		level color_group
+			lineageTag: b7af2c7e-274b-4dda-83f9-135be5cae2ab
+			column: color_group
+
+		level Color
+			lineageTag: 357edc8a-f7ed-4f73-a2bd-88f91ba607fb
+			column: Color
+
+	partition colors = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\kanzi\Documents\Data Challenge\Power BI Data Championship\World Champs BCN 26 Round 2\Data\colors.csv"),[Delimiter=",", Columns=8, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"id", Int64.Type}, {"name", type text}, {"rgb", type text}, {"is_trans", type logical}, {"num_parts", Int64.Type}, {"num_sets", Int64.Type}, {"y1", Int64.Type}, {"y2", Int64.Type}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"id", "color_id"}, {"name", "Color"}, {"is_trans", "Is transparent"}, {"y1", "year_release"}, {"y2", "year_stop"}}),
+				    #"Filtered Rows" = Table.SelectRows(#"Renamed Columns", each ([year_release] <> null and [year_release] <> 1949 and [year_release] <> 2026))
+				in
+				    #"Filtered Rows"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

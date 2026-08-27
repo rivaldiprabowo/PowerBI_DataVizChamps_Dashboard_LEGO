@@ -1,0 +1,43 @@
+table inventory_sets
+	lineageTag: 539cd35d-0dbb-4393-b674-1377f30536e1
+
+	column inventory_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 1735433f-273c-4dc7-a8a9-f301c11195ba
+		summarizeBy: sum
+		sourceColumn: inventory_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_num
+		dataType: string
+		lineageTag: cfc06ccf-d68e-48b5-b341-30076b47dda9
+		summarizeBy: none
+		sourceColumn: set_num
+
+		annotation SummarizationSetBy = Automatic
+
+	column quantity
+		dataType: int64
+		formatString: 0
+		lineageTag: 6ecb7b34-1738-4c55-bf6b-7eca61ef3b43
+		summarizeBy: sum
+		sourceColumn: quantity
+
+		annotation SummarizationSetBy = Automatic
+
+	partition inventory_sets = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\kanzi\Documents\Data Challenge\Power BI Data Championship\World Champs BCN 26 Round 2\Data\inventory_sets.csv"),[Delimiter=",", Columns=3, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"inventory_id", Int64.Type}, {"set_num", type text}, {"quantity", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,46 @@
+table decade_lego_summary
+	lineageTag: 15e617a7-81ec-4318-b31a-5cdbb9949b57
+
+	column Decade
+		lineageTag: 8e389e87-6ca5-4267-9aad-9ef0961614b6
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Decade]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Summary
+		lineageTag: df4b480a-b3bc-4e58-b3ed-bb7f4a2f61b2
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Summary]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition decade_lego_summary = calculated
+		mode: import
+		source =
+				
+				SELECTCOLUMNS (
+				    SUMMARIZE (
+				        sets,
+				        sets[decade_order]
+				    ),
+				    "Decade", sets[decade_order] & "s",
+				    "Summary",
+				        SWITCH (
+				            VALUE(sets[decade_order]),
+				            1950, "1950s : The decade opened with 5 sets and closed with 127 released across 7 themes, using 43 distinct colors. Average parts per set stood at 24, with no minifigures yet in the catalog. LEGO's earliest sets consisted almost entirely of simple bricks. The first small-brick releases established the foundation on which every future set would be built.",
+				            1960, "1960s : Beginning with only 3 sets, the decade closed at 404 — a 218% increase over the 1950s — across 17 themes and 88 colors, with no minifigures yet introduced. Average parts per set rose to 76, more than triple the previous decade. This marked LEGO's first true growth phase, with aggressive catalog expansion setting the pace for decades to come.",
+				            1970, "1970s : The decade opened with 43 sets and closed at 514, a 27% increase over the 1960s, continuing the upward trend. 46 themes were released across 95 colors, and the minifigure entered the catalog for the first time, with 121 released. Average parts per set climbed to 134, up 76%. The 1979 launch of LEGO Technic introduced mechanical building and opened a new engineering-driven segment.",
+				            1980, "1980s : Sets grew from 110 at the decade's start to 1,045 by its close, a 103% increase. 50 themes were released across 102 colors, and minifigure output surged 284% to 465. Average parts per set dipped slightly to 107 — roughly 20% below the previous decade — reflecting a strategic shift toward higher volumes of smaller sets. Pirates (1989) launched and became one of the most beloved themes in LEGO's history.",
+				            1990, "1990s : The decade opened with 116 sets and closed at 1,917, an 83% increase, sustaining a strong upward trend. 106 themes were released across 145 colors, and minifigure output more than doubled to 1,062, up 128% from the 1980s. Average parts per set rose to 138. LEGO continued expanding release volume while pushing toward more complex, ambitious builds.",
+				            2000, "2000s : Sets grew from 408 to 4,408 by decade's end, a 130% increase, though growth within the decade was uneven. 175 themes were released across 238 colors, and minifigure output nearly doubled again to 2,058, up 94%. Average parts per set reached 151. In 2000, LEGO's first licensed partnership with Star Wars defined its commercial strategy for the next quarter-century. Harry Potter deepened LEGO's pop-culture positioning, while BIONICLE (2001) became its most successful original theme.",
+				            2010, "2010s : The decade opened with 532 sets and closed at 8,324 — an 89% increase, continuing the sustained uptrend. 209 themes were released across 254 colors, and minifigure output more than tripled to 6,864, up 234%. Average parts per set rose to 164. Growth was driven by a wave of licensing agreements as major film studios and entertainment brands partnered with LEGO across their franchises. NINJAGO (2011) launched as a defining original theme, and the record-breaking 7,541-piece Millennium Falcon (2017) became one of the most celebrated single releases in the brand's history.",
+				            2020, "2020s : As of 2025, the decade opened with 1,126 sets and has reached 6,944 sets released to date, across 163 themes and 271 colors, with 5,864 minifigures released. Average parts per set has risen sharply to 256 — the clearest indicator yet of a strategic pivot toward fewer, larger, and more ambitious releases. Complexity is also increasing, marked by a notable rise in average parts per set.",
+				            BLANK()
+				        )
+				)
+
+	annotation PBI_Id = 7df38a0cf8c6411081d61b85847f1ba9
+

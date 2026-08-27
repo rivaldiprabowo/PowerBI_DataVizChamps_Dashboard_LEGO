@@ -1,0 +1,69 @@
+table inventory_minifigs
+	lineageTag: cf9a1f82-fd18-444c-b3ac-a978d047894c
+
+	column inventory_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 2946721e-b745-491f-9b6c-c0d2414a3fd1
+		summarizeBy: none
+		sourceColumn: inventory_id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column fig_num
+		dataType: string
+		lineageTag: c8dc771d-ae1e-434a-811b-e7b66b4b0930
+		summarizeBy: none
+		sourceColumn: fig_num
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column quantity
+		dataType: int64
+		formatString: 0
+		lineageTag: b999621d-e2eb-4712-9f77-4d812d87b5cf
+		summarizeBy: sum
+		sourceColumn: quantity
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column mini_figures_name = LOOKUPVALUE('minifigures'[minifigure_name],minifigures[fig_number],inventory_minifigs[fig_num])
+		lineageTag: fa560f52-b65f-4001-811f-1c9d7a8ff8b1
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_number = RELATED(inventories[set_num])
+		lineageTag: 96a3d8f2-e5c6-4663-ab7b-71cb8bdf8371
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column mini_figures_image = RELATED('minifigures'[img_url])
+		lineageTag: 3a2b6d1e-ad86-4f0a-b4de-a167d6d17ad8
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition inventory_minifigs = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\kanzi\Documents\Data Challenge\Power BI Data Championship\World Champs BCN 26 Round 2\Data\inventory_minifigs.csv"),[Delimiter=",", Columns=3, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"inventory_id", Int64.Type}, {"fig_num", type text}, {"quantity", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

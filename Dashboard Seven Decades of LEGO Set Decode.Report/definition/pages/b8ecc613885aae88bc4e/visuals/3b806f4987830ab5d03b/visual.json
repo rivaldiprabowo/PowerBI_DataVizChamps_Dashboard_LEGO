@@ -1,0 +1,17 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "3b806f4987830ab5d03b",
+  "position": {
+    "x": 1519.1616480260011,
+    "y": 90.025252525252682,
+    "z": 11000,
+    "height": 49.090909090909086,
+    "width": 401.81818181818181
+  },
+  "visualGroup": {
+    "displayName": "BM Variety Prop",
+    "groupMode": "ScaleMode"
+  },
+  "parentGroupName": "4040fa9dd116d52412be",
+  "isHidden": true
+}

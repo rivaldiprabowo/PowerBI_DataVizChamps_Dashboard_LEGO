@@ -1,0 +1,17 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "c493330414c7778bb714",
+  "position": {
+    "x": 479.06063792499128,
+    "y": 363.33316400827084,
+    "z": 3000,
+    "height": 27.777777777777828,
+    "width": 191.66666666666663,
+    "tabOrder": 11005
+  },
+  "visualGroup": {
+    "displayName": "BM Part Hist",
+    "groupMode": "ScaleMode"
+  },
+  "parentGroupName": "0931b090e391d7816a7b"
+}

@@ -1,0 +1,35 @@
+table dim_year
+	lineageTag: 62ad4c26-6d93-4785-89c0-4b1329d9c6ab
+
+	column year
+		formatString: 0
+		lineageTag: d28e28c1-ef0e-477d-8f30-f7c50043f8e3
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		annotation SummarizationSetBy = Automatic
+
+	column decade =
+			
+			VAR YearNum = VALUE(dim_year[year])
+			RETURN FLOOR(YearNum, 10) & "s"
+		lineageTag: a9317352-5507-415a-a59a-eae69fe37cdf
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column year_short = RIGHT(dim_year[year],2)
+		dataType: int64
+		formatString: 0
+		lineageTag: 16f155d1-a80c-4cb3-80c5-25ad3a333dfe
+		summarizeBy: sum
+		sortByColumn: year
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_year = calculated
+		mode: import
+		source = GENERATESERIES(MIN('sets'[year_release]), MAX('colors'[year_release]),1)
+
+	annotation PBI_Id = d8a1fdee40224bf78dc16aad2272247c
+

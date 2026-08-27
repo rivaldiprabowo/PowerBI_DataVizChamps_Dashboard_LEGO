@@ -1,0 +1,38 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "8d7b2d61b89d1c09a0ab",
+  "position": {
+    "x": 653.20197044334975,
+    "y": 309.32881773399015,
+    "z": 0,
+    "height": 601.38546798029563,
+    "width": 722.29064039408865,
+    "tabOrder": 24000
+  },
+  "visual": {
+    "visualType": "htmlContent443BE3AD55E043BF878BED274D3A6855",
+    "query": {
+      "queryState": {
+        "content": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "HTML Radar LEGO DNA"
+                }
+              },
+              "queryRef": "_Measures.HTML Radar LEGO DNA",
+              "nativeQueryRef": "HTML Radar LEGO DNA"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

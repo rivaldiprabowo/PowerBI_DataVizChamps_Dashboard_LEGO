@@ -1,0 +1,53 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "23b7ad93b12229d00034",
+  "position": {
+    "x": 555.43135665117165,
+    "y": 340.29635982365778,
+    "z": 9000,
+    "height": 117.48091603053435,
+    "width": 286.65343511450379,
+    "tabOrder": 6000
+  },
+  "visual": {
+    "visualType": "htmlContent443BE3AD55E043BF878BED274D3A6855",
+    "query": {
+      "queryState": {
+        "content": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "HTML Card Avg Age Color Active"
+                }
+              },
+              "queryRef": "_Measures.HTML Card Avg Age Color Active",
+              "nativeQueryRef": "HTML Card Avg Age Color Active"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "contentFormatting": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "805866642f938e49a4bf",
+  "position": {
+    "x": 932.69704433497543,
+    "y": 852.61699507389164,
+    "z": 2000,
+    "height": 359.57512315270935,
+    "width": 1047.3214285714287,
+    "tabOrder": 16000
+  },
+  "visual": {
+    "visualType": "htmlContent443BE3AD55E043BF878BED274D3A6855",
+    "query": {
+      "queryState": {
+        "content": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "HTML Barchart Color Lifespan"
+                }
+              },
+              "queryRef": "_Measures.HTML Color Lifespan Tornado",
+              "nativeQueryRef": "HTML Barchart Color Lifespan"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

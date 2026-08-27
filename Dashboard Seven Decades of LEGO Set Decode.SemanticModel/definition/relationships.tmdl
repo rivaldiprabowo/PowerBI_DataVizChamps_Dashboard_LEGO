@@ -1,0 +1,75 @@
+relationship AutoDetected_0ede0624-5d41-48a7-920f-a9a81ef9004f
+	crossFilteringBehavior: bothDirections
+	fromColumn: inventories.set_num
+	toColumn: sets.set_number
+
+relationship AutoDetected_bc964d7b-e63f-4e08-9e18-f34c4ff9a96d
+	crossFilteringBehavior: bothDirections
+	fromColumn: sets.theme_id
+	toColumn: themes.theme_id
+
+relationship AutoDetected_876e0ff2-0e46-4a41-bae7-070fb45d8291
+	fromColumn: inventory_parts.part_num
+	toColumn: parts.part_number
+
+relationship AutoDetected_7ecd3efb-6d0c-46ba-ac7d-e5096025086c
+	crossFilteringBehavior: bothDirections
+	fromColumn: inventory_parts.color_id
+	toColumn: colors.color_id
+
+relationship AutoDetected_5cd96acf-2a09-40b2-ad03-b2382fcbc19c
+	crossFilteringBehavior: bothDirections
+	fromColumn: inventory_minifigs.fig_num
+	toColumn: minifigures.fig_number
+
+relationship 9ff3bf55-bf20-dfb6-0c70-516b20263be0
+	crossFilteringBehavior: bothDirections
+	fromColumn: inventory_parts.inventory_id
+	toColumn: inventories.inventory_id
+
+relationship ad4c6c35-f931-ae89-624c-59c4d3c2bae8
+	crossFilteringBehavior: bothDirections
+	fromColumn: inventory_minifigs.inventory_id
+	toColumn: inventories.inventory_id
+
+relationship AutoDetected_bc67b657-855c-4f87-afd6-29c8d254b408
+	fromColumn: parts.part_cat_id
+	toColumn: part_categories.part_cat_id
+
+relationship 4260b646-5444-bc47-4566-36b5dc12e325
+	fromColumn: sets.year_release
+	toColumn: dim_year.year
+
+relationship dbd8f516-33a7-cee3-d10f-fc4857bd50af
+	isActive: false
+	fromColumn: colors.year_release
+	toColumn: dim_year.year
+
+relationship 6004de05-70b8-35ba-c631-571a59b69433
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: dim_year.decade
+	toColumn: decade_lego_set_color_rgb.Decade
+
+relationship 8a8d0344-c251-8efa-11be-b88fcffc72de
+	crossFilteringBehavior: bothDirections
+	fromColumn: dim_year.decade
+	toColumn: decade_lego_summary.Decade
+
+relationship 5bd60827-a1ec-580d-0b49-1155267e801b
+	fromColumn: decade_lego_set_complex.'Decade Order'
+	toColumn: dim_year.year
+
+relationship f1a4210b-b381-f362-4b72-136c4a4e7bf5
+	fromColumn: 'Matrix Complex Set'.'Set Complexity'
+	toColumn: dim_set_complexity.'Set Complexity'
+
+relationship 1970fb03-a732-524b-ee89-7a450eb53693
+	fromColumn: decade_lego_set_complex.'Set Complexity'
+	toColumn: dim_set_complexity.'Set Complexity'
+
+relationship 1cbbb00f-5f4d-5bc8-7fec-2f9ca01a1c59
+	crossFilteringBehavior: bothDirections
+	fromColumn: dim_year.decade
+	toColumn: decade_theme_highlights.Decade
+

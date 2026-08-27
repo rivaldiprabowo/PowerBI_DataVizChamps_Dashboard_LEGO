@@ -1,0 +1,17 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "c211c355849a3e8d840c",
+  "position": {
+    "x": 1517.6883393663361,
+    "y": 90.273133768382962,
+    "z": 9000,
+    "height": 49.069467376493492,
+    "width": 401.78709635773657,
+    "tabOrder": 11001
+  },
+  "visualGroup": {
+    "displayName": "BM Part Trend",
+    "groupMode": "ScaleMode"
+  },
+  "parentGroupName": "0931b090e391d7816a7b"
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "d4dcf1ab2e5c56428838",
+  "position": {
+    "x": 1518.3406648983589,
+    "y": 88.800613700516777,
+    "z": 12000,
+    "height": 49.737118822292324,
+    "width": 400.1577287066246
+  },
+  "visualGroup": {
+    "displayName": "BM Minifig Trend",
+    "groupMode": "ScaleMode"
+  },
+  "parentGroupName": "95c978726d535bb70cc8",
+  "isHidden": true
+}

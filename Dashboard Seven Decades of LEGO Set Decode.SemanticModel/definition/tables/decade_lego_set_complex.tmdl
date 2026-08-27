@@ -1,0 +1,182 @@
+table decade_lego_set_complex
+	lineageTag: 195711fc-2ff5-4d33-9ace-56b54d1563a0
+
+	column Decade
+		lineageTag: 1b7df76d-dfe4-4c8f-aa7c-3ae91f956052
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Decade]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Decade Order'
+		formatString: 0
+		lineageTag: 8887accf-8a6b-4356-aa17-cef0229bc6ef
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Decade Order]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Set Complexity'
+		lineageTag: fdb8bd1c-45a5-4e71-845f-196444a2c6b3
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Set Complexity]
+		sortByColumn: 'Set Complexity Order'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Number of Sets'
+		formatString: 0
+		lineageTag: e6819d5f-a604-40cc-9f33-2c12ea9a471b
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Number of Sets]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Avg Part per Set'
+		lineageTag: dd1629a5-d34a-4a65-9be1-8a4cc200f02a
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Avg Part per Set]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Total Set per Decade'
+		formatString: 0
+		lineageTag: 82060650-8e48-4f5e-86ea-f738aa5ae6de
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Total Set per Decade]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Perc Part in Each Decade' = 'decade_lego_set_complex'[Number of Sets]/'decade_lego_set_complex'[Total Set per Decade]
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: fa06c42a-12d8-4513-977f-4646dd2ae31b
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column AccentColor =
+			
+			SWITCH(
+			    TRUE(),
+			    decade_lego_set_complex[Set Complexity] = "Micro", "#008300",
+			    decade_lego_set_complex[Set Complexity] = "Small", "#2a78d6",
+			    decade_lego_set_complex[Set Complexity] = "Medium", "#eda100",
+			    decade_lego_set_complex[Set Complexity] = "Large", "#eb6834",
+			    decade_lego_set_complex[Set Complexity] = "Mega", "#e34948"
+			)
+		lineageTag: 43643870-85bc-4293-9545-969b74c83fe1
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Set Complexity Order'
+		formatString: 0
+		lineageTag: 30838520-9d9f-478d-a859-c910d65d2e4e
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Set Complexity Order]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Representative Set Name'
+		lineageTag: bd401026-73ad-402c-81b5-44d2cd587ceb
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Representative Set Name]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Representative Set Image'
+		lineageTag: edbefca0-11ac-449f-adf7-755dba664a18
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Representative Set Image]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Representative Set Total Part'
+		formatString: 0
+		lineageTag: 96eb0fde-d0c7-406f-b768-06c79fbaaebb
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Representative Set Total Part]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Part Count Category'
+		lineageTag: fddae8aa-4fed-4701-a629-2fba96ac28f3
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Part Count Category]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition decade_lego_set_complex = calculated
+		mode: import
+		source =
+				
+				
+				SELECTCOLUMNS (
+				    SUMMARIZE (
+				        sets,
+				        sets[decade],
+				        sets[decade_order],
+				        sets[complexity_tier]
+				    ),
+				    "Decade", sets[decade],
+				    "Decade Order", sets[decade_order],
+				    "Set Complexity", sets[complexity_tier],
+				    "Set Complexity Order", CALCULATE(MAX('sets'[set_complexity_order])),
+				    "Number of Sets", CALCULATE ( COUNT(sets[set_number]) ),
+				    "Avg Part per Set", ROUND(CALCULATE ( DIVIDE ( SUM ( sets[number_of_parts] ), COUNT ( sets[set_number] ), 0 ) ),2),
+				    "Total Set per Decade", CALCULATE ( COUNT ( sets[set_number] ), ALLEXCEPT ( sets, sets[decade], sets[decade_order] ) ),
+				    "Representative Set Name",
+				        VAR TopSet =
+				            TOPN(
+				                1,
+				                CALCULATETABLE(sets),
+				                sets[number_of_parts], DESC,
+				                sets[set_number], ASC        -- tiebreaker: guarantees same row every time
+				            )
+				        RETURN
+				            MAXX(TopSet, sets[set_name]),
+				    "Representative Set Image",
+				        VAR TopSet =
+				            TOPN(
+				                1,
+				                CALCULATETABLE(sets),
+				                sets[number_of_parts], DESC,
+				                sets[set_number], ASC
+				            )
+				        RETURN
+				            MAXX(TopSet, sets[img_url]),
+				    "Representative Set Total Part",
+				        VAR TopSet =
+				            TOPN(
+				                1,
+				                CALCULATETABLE(sets),
+				                sets[number_of_parts], DESC,
+				                sets[set_number], ASC
+				            )
+				        RETURN
+				            MAXX(TopSet, sets[number_of_parts]),
+				    "Part Count Category", SWITCH(
+				        TRUE(),
+				        sets[complexity_tier] = "Micro", "1-19 Parts",
+				        sets[complexity_tier] = "Small", "20-89 Parts",
+				        sets[complexity_tier] = "Medium", "90-219 Parts",
+				        sets[complexity_tier] = "Large", "220-700 Parts",
+				        sets[complexity_tier] = "Mega", ">700 Parts"
+				    )
+				)
+
+	annotation PBI_Id = 67b1b54c16d44a2d9b3a8682e0446430
+

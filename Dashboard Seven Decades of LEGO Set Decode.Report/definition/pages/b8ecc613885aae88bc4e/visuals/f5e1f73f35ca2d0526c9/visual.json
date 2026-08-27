@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "f5e1f73f35ca2d0526c9",
+  "position": {
+    "x": 1518.1161934804704,
+    "y": 90.0000000000766,
+    "z": 6000,
+    "height": 49.069467376493492,
+    "width": 401.78709635773657,
+    "tabOrder": 11001
+  },
+  "visualGroup": {
+    "displayName": "BM Part Prop",
+    "groupMode": "ScaleMode"
+  },
+  "parentGroupName": "0931b090e391d7816a7b",
+  "isHidden": true
+}

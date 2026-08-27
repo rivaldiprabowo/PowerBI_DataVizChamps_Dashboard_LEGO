@@ -1,0 +1,156 @@
+{
+  "triggerPrompts": [
+    {
+      "prompt": "How many sets does each minifigure appear in?"
+    },
+    {
+      "prompt": "Which minifigure appears in the most sets?"
+    }
+  ],
+  "contactObjectId": "6feaf25f-395e-413a-ae8b-5a9fd79329db",
+  "sourceMetadata": {
+    "visualMetadata": {
+      "themeCollection": {
+        "baseTheme": {
+          "name": "Fluent2-CY26SU05",
+          "reportVersionAtImport": {
+            "visual": "2.9.0",
+            "report": "3.3.0",
+            "page": "2.3.1"
+          },
+          "type": "SharedResources"
+        },
+        "customTheme": {
+          "name": "Accessible_City_park5942914118805086.json",
+          "reportVersionAtImport": {
+            "visual": "2.10.0",
+            "report": "3.4.0",
+            "page": "2.3.1"
+          },
+          "type": "RegisteredResources"
+        }
+      },
+      "resourcePackages": [
+        {
+          "name": "SharedResources",
+          "type": "SharedResources",
+          "items": [
+            {
+              "name": "Fluent2-CY26SU05",
+              "path": "ResourcePackages/SharedResources/322a48dd7ff762b21bce9f05cd2b811e1d18016f686da4d09250916c6389ac4f-Fluent2-CY26SU05.json",
+              "type": "BaseTheme"
+            }
+          ]
+        },
+        {
+          "name": "RegisteredResources",
+          "type": "RegisteredResources",
+          "items": [
+            {
+              "name": "Accessible_City_park5942914118805086.json",
+              "path": "ResourcePackages/RegisteredResources/1a977a7b815f07f64c1844221dc11ce5aef55e8b56a60c616066d0584a56a9db-Accessible_City_park5942914118805086.json",
+              "type": "CustomTheme"
+            }
+          ]
+        }
+      ],
+      "cache": {
+        "key": "JTdCJTIydmlzdWFsVHlwZSUyMiUzQSUyMnRhYmxlRXglMjIlMkMlMjJxdWVyeSUyMiUzQSU3QiUyMnF1ZXJ5U3RhdGUlMjIlM0ElN0IlMjJWYWx1ZXMlMjIlM0ElN0IlMjJwcm9qZWN0aW9ucyUyMiUzQSU1QiU3QiUyMmZpZWxkJTIyJTNBJTdCJTIyQ29sdW1uJTIyJTNBJTdCJTIyRXhwcmVzc2lvbiUyMiUzQSU3QiUyMlNvdXJjZVJlZiUyMiUzQSU3QiUyMkVudGl0eSUyMiUzQSUyMk1pbmlmaWd1cmVzJTIyJTdEJTdEJTJDJTIyUHJvcGVydHklMjIlM0ElMjJNaW5pZmlndXJlJTIwTmFtZSUyMiU3RCU3RCUyQyUyMnF1ZXJ5UmVmJTIyJTNBJTIybWluaWZpZ3MuTWluaWZpZ3VyZSUyME5hbWUlMjIlMkMlMjJuYXRpdmVRdWVyeVJlZiUyMiUzQSUyMk1pbmlmaWd1cmUlMjBOYW1lJTIyJTdEJTJDJTdCJTIyZmllbGQlMjIlM0ElN0IlMjJDb2x1bW4lMjIlM0ElN0IlMjJFeHByZXNzaW9uJTIyJTNBJTdCJTIyU291cmNlUmVmJTIyJTNBJTdCJTIyRW50aXR5JTIyJTNBJTIyTWluaWZpZ3VyZXMlMjIlN0QlN0QlMkMlMjJQcm9wZXJ0eSUyMiUzQSUyMmltZ191cmwlMjIlN0QlN0QlMkMlMjJxdWVyeVJlZiUyMiUzQSUyMk1pbmlmaWd1cmVzLmltZ191cmwlMjIlMkMlMjJuYXRpdmVRdWVyeVJlZiUyMiUzQSUyMmltZ191cmwlMjIlN0QlMkMlN0IlMjJmaWVsZCUyMiUzQSU3QiUyMk1lYXN1cmUlMjIlM0ElN0IlMjJFeHByZXNzaW9uJTIyJTNBJTdCJTIyU291cmNlUmVmJTIyJTNBJTdCJTIyRW50aXR5JTIyJTNBJTIyX01lYXN1cmVzJTIyJTdEJTdEJTJDJTIyUHJvcGVydHklMjIlM0ElMjJTZXRzJTIyJTdEJTdEJTJDJTIycXVlcnlSZWYlMjIlM0ElMjJfTWVhc3VyZXMuU2V0cyUyMiUyQyUyMm5hdGl2ZVF1ZXJ5UmVmJTIyJTNBJTIyU2V0cyUyMiU3RCU1RCU3RCU3RCUyQyUyMnNvcnREZWZpbml0aW9uJTIyJTNBJTdCJTIyc29ydCUyMiUzQSU1QiU3QiUyMmZpZWxkJTIyJTNBJTdCJTIyTWVhc3VyZSUyMiUzQSU3QiUyMkV4cHJlc3Npb24lMjIlM0ElN0IlMjJTb3VyY2VSZWYlMjIlM0ElN0IlMjJFbnRpdHklMjIlM0ElMjJfTWVhc3VyZXMlMjIlN0QlN0QlMkMlMjJQcm9wZXJ0eSUyMiUzQSUyMlNldHMlMjIlN0QlN0QlMkMlMjJkaXJlY3Rpb24lMjIlM0ElMjJEZXNjZW5kaW5nJTIyJTdEJTVEJTdEJTdEJTJDJTIyb2JqZWN0cyUyMiUzQSU3QiUyMmdyaWQlMjIlM0ElNUIlN0IlMjJwcm9wZXJ0aWVzJTIyJTNBJTdCJTIydGV4dFNpemUlMjIlM0ElN0IlMjJleHByJTIyJTNBJTdCJTIyTGl0ZXJhbCUyMiUzQSU3QiUyMlZhbHVlJTIyJTNBJTIyMTZEJTIyJTdEJTdEJTdEJTdEJTdEJTVEJTdEJTdEJTdCJTIyZmlsdGVycyUyMiUzQSU1QiU3QiUyMm5hbWUlMjIlM0ElMjI3ODNhNmZhYWU4MDg4ODVlMmFhMyUyMiUyQyUyMmZpZWxkJTIyJTNBJTdCJTIyQ29sdW1uJTIyJTNBJTdCJTIyRXhwcmVzc2lvbiUyMiUzQSU3QiUyMlNvdXJjZVJlZiUyMiUzQSU3QiUyMkVudGl0eSUyMiUzQSUyMk1pbmlmaWd1cmVzJTIyJTdEJTdEJTJDJTIyUHJvcGVydHklMjIlM0ElMjJNaW5pZmlndXJlJTIwTmFtZSUyMiU3RCU3RCUyQyUyMnR5cGUlMjIlM0ElMjJDYXRlZ29yaWNhbCUyMiUyQyUyMmlzTG9ja2VkSW5WaWV3TW9kZSUyMiUzQXRydWUlN0QlNUQlN0Q=",
+        "query": {
+          "Query": {
+            "Version": 2,
+            "From": [
+              {
+                "Name": "m",
+                "Entity": "Minifigures"
+              },
+              {
+                "Name": "_",
+                "Entity": "_Measures"
+              }
+            ],
+            "Where": [],
+            "OrderBy": [
+              {
+                "Expression": {
+                  "Measure": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Source": "_"
+                      }
+                    },
+                    "Property": "Sets"
+                  }
+                },
+                "Direction": 2
+              }
+            ],
+            "Select": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Source": "m"
+                    }
+                  },
+                  "Property": "Minifigure Name"
+                },
+                "NativeReferenceName": "Minifigure Name",
+                "Name": "minifigs.Minifigure Name"
+              },
+              {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Source": "_"
+                    }
+                  },
+                  "Property": "Sets"
+                },
+                "NativeReferenceName": "Sets",
+                "Name": "_Measures.Sets"
+              },
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Source": "m"
+                    }
+                  },
+                  "Property": "img_url"
+                },
+                "NativeReferenceName": "img_url",
+                "Name": "Minifigures.img_url"
+              }
+            ],
+            "GroupBy": []
+          },
+          "Binding": {
+            "Version": 1,
+            "Primary": {
+              "Groupings": [
+                {
+                  "Projections": [
+                    0,
+                    1,
+                    2
+                  ],
+                  "Subtotal": 1
+                }
+              ]
+            },
+            "DataReduction": {
+              "Primary": {
+                "Window": {
+                  "Count": 500
+                }
+              },
+              "DataVolume": 3
+            }
+          }
+        }
+      }
+    }
+  },
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/verifiedAnswers/definition/2.0.0/schema.json"
+}

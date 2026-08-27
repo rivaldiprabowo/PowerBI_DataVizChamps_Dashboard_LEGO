@@ -1,0 +1,444 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/3.0.0/schema.json",
+  "themeCollection": {
+    "baseTheme": {
+      "name": "CY25SU10",
+      "reportVersionAtImport": {
+        "visual": "2.1.0",
+        "report": "3.0.0",
+        "page": "2.3.0"
+      },
+      "type": "SharedResources"
+    },
+    "customTheme": {
+      "name": "LEGO_DataViz_Championship_-_Ba18923738477724528.json",
+      "reportVersionAtImport": {
+        "visual": "2.1.0",
+        "report": "3.0.0",
+        "page": "2.3.0"
+      },
+      "type": "RegisteredResources"
+    }
+  },
+  "objects": {
+    "section": [
+      {
+        "properties": {
+          "verticalAlignment": {
+            "expr": {
+              "Literal": {
+                "Value": "'Top'"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspacePane": [
+      {
+        "properties": {
+          "expanded": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "publicCustomVisuals": [
+    "htmlContent443BE3AD55E043BF878BED274D3A6855",
+    "htmlContent443BE3AD55E043BF878BED274D3A6865",
+    "textFilter25A4896A83E0487089E2B90C9AE57C8A"
+  ],
+  "resourcePackages": [
+    {
+      "name": "SharedResources",
+      "type": "SharedResources",
+      "items": [
+        {
+          "name": "CY25SU10",
+          "path": "BaseThemes/CY25SU10.json",
+          "type": "BaseTheme"
+        }
+      ]
+    },
+    {
+      "name": "RegisteredResources",
+      "type": "RegisteredResources",
+      "items": [
+        {
+          "name": "LEGO_DataViz_Championship_-_Ba18923738477724528.json",
+          "path": "LEGO_DataViz_Championship_-_Ba18923738477724528.json",
+          "type": "CustomTheme"
+        },
+        {
+          "name": "Slicer_bricks_unselect8898382290067677.png",
+          "path": "Slicer_bricks_unselect8898382290067677.png",
+          "type": "Image"
+        },
+        {
+          "name": "Slicer_bricks_All03640134853975274.png",
+          "path": "Slicer_bricks_All03640134853975274.png",
+          "type": "Image"
+        },
+        {
+          "name": "Slicer_bricks_All1319840156257006.png",
+          "path": "Slicer_bricks_All1319840156257006.png",
+          "type": "Image"
+        },
+        {
+          "name": "Slicer_bricks_All8291077711364977.png",
+          "path": "Slicer_bricks_All8291077711364977.png",
+          "type": "Image"
+        },
+        {
+          "name": "Slicer_bricks_All16375205469151166.png",
+          "path": "Slicer_bricks_All16375205469151166.png",
+          "type": "Image"
+        },
+        {
+          "name": "Slicer_bricks_All8003390829818524.png",
+          "path": "Slicer_bricks_All8003390829818524.png",
+          "type": "Image"
+        },
+        {
+          "name": "Slicer_bricks_All21711122740469602.png",
+          "path": "Slicer_bricks_All21711122740469602.png",
+          "type": "Image"
+        },
+        {
+          "name": "History_Set23196357266766265.png",
+          "path": "History_Set23196357266766265.png",
+          "type": "Image"
+        },
+        {
+          "name": "History_Set_White9083456572789244.png",
+          "path": "History_Set_White9083456572789244.png",
+          "type": "Image"
+        },
+        {
+          "name": "figures36872936343619767.png",
+          "path": "figures36872936343619767.png",
+          "type": "Image"
+        },
+        {
+          "name": "figures_white7276529769862613.png",
+          "path": "figures_white7276529769862613.png",
+          "type": "Image"
+        },
+        {
+          "name": "Icon_Color43509399244887215.png",
+          "path": "Icon_Color43509399244887215.png",
+          "type": "Image"
+        },
+        {
+          "name": "Icon_Color4524861961619575.png",
+          "path": "Icon_Color4524861961619575.png",
+          "type": "Image"
+        },
+        {
+          "name": "figures_white930412220230103.png",
+          "path": "figures_white930412220230103.png",
+          "type": "Image"
+        },
+        {
+          "name": "figures_white7332504413319991.png",
+          "path": "figures_white7332504413319991.png",
+          "type": "Image"
+        },
+        {
+          "name": "History_Set_White17592981717175815.png",
+          "path": "History_Set_White17592981717175815.png",
+          "type": "Image"
+        },
+        {
+          "name": "History_Set_White007486513662461225.png",
+          "path": "History_Set_White007486513662461225.png",
+          "type": "Image"
+        },
+        {
+          "name": "Icon_Color_Blue4732293103015808.png",
+          "path": "Icon_Color_Blue4732293103015808.png",
+          "type": "Image"
+        },
+        {
+          "name": "Icon_Color6734897163993637.png",
+          "path": "Icon_Color6734897163993637.png",
+          "type": "Image"
+        },
+        {
+          "name": "Icon_Color5857984290632875.png",
+          "path": "Icon_Color5857984290632875.png",
+          "type": "Image"
+        },
+        {
+          "name": "Icon_Color3601149892558029.png",
+          "path": "Icon_Color3601149892558029.png",
+          "type": "Image"
+        },
+        {
+          "name": "build_bricks7439653741565023.png",
+          "path": "build_bricks7439653741565023.png",
+          "type": "Image"
+        },
+        {
+          "name": "build_bricks_white7476278100434385.png",
+          "path": "build_bricks_white7476278100434385.png",
+          "type": "Image"
+        },
+        {
+          "name": "build_bricks_white7564601435030659.png",
+          "path": "build_bricks_white7564601435030659.png",
+          "type": "Image"
+        },
+        {
+          "name": "build_bricks_white06947701405770534.png",
+          "path": "build_bricks_white06947701405770534.png",
+          "type": "Image"
+        },
+        {
+          "name": "Icon_Color_Blue02996710974340111.png",
+          "path": "Icon_Color_Blue02996710974340111.png",
+          "type": "Image"
+        },
+        {
+          "name": "build_bricks_white5439078244734518.png",
+          "path": "build_bricks_white5439078244734518.png",
+          "type": "Image"
+        },
+        {
+          "name": "TT_Slicer_Last_Page473347215942689.jpg",
+          "path": "TT_Slicer_Last_Page473347215942689.jpg",
+          "type": "Image"
+        },
+        {
+          "name": "TT_Explanation_Page_45359601434803613.jpg",
+          "path": "TT_Explanation_Page_45359601434803613.jpg",
+          "type": "Image"
+        },
+        {
+          "name": "TT_Explanation_Page_142958039557008587.jpg",
+          "path": "TT_Explanation_Page_142958039557008587.jpg",
+          "type": "Image"
+        },
+        {
+          "name": "TT_Explanation_Page_244531899828349064.jpg",
+          "path": "TT_Explanation_Page_244531899828349064.jpg",
+          "type": "Image"
+        },
+        {
+          "name": "TT_Explanation_Page_34829088045254578.jpg",
+          "path": "TT_Explanation_Page_34829088045254578.jpg",
+          "type": "Image"
+        },
+        {
+          "name": "Welcoming_Page7121598324026306.jpg",
+          "path": "Welcoming_Page7121598324026306.jpg",
+          "type": "Image"
+        },
+        {
+          "name": "Page_38015071852670145.jpg",
+          "path": "Page_38015071852670145.jpg",
+          "type": "Image"
+        },
+        {
+          "name": "Page_49925247681024824.jpg",
+          "path": "Page_49925247681024824.jpg",
+          "type": "Image"
+        },
+        {
+          "name": "Timeline_White5530340967809861.png",
+          "path": "Timeline_White5530340967809861.png",
+          "type": "Image"
+        },
+        {
+          "name": "Timeline_White5895412696527887.png",
+          "path": "Timeline_White5895412696527887.png",
+          "type": "Image"
+        },
+        {
+          "name": "Timeline_White1999026594472859.png",
+          "path": "Timeline_White1999026594472859.png",
+          "type": "Image"
+        },
+        {
+          "name": "Timeline_White3602070478453565.png",
+          "path": "Timeline_White3602070478453565.png",
+          "type": "Image"
+        },
+        {
+          "name": "Background_Page_119322430767922316.jpg",
+          "path": "Background_Page_119322430767922316.jpg",
+          "type": "Image"
+        },
+        {
+          "name": "Timeline4098301251325025.png",
+          "path": "Timeline4098301251325025.png",
+          "type": "Image"
+        },
+        {
+          "name": "figures_white5528866484568553.png",
+          "path": "figures_white5528866484568553.png",
+          "type": "Image"
+        },
+        {
+          "name": "part_white9742321613478819.png",
+          "path": "part_white9742321613478819.png",
+          "type": "Image"
+        },
+        {
+          "name": "part_unique8797145900668835.png",
+          "path": "part_unique8797145900668835.png",
+          "type": "Image"
+        },
+        {
+          "name": "part_unique_white44800184503074014.png",
+          "path": "part_unique_white44800184503074014.png",
+          "type": "Image"
+        },
+        {
+          "name": "part_unique_white1097528010406561.png",
+          "path": "part_unique_white1097528010406561.png",
+          "type": "Image"
+        },
+        {
+          "name": "part_unique_white3745232504936271.png",
+          "path": "part_unique_white3745232504936271.png",
+          "type": "Image"
+        },
+        {
+          "name": "minifigure_part0728107061307115.png",
+          "path": "minifigure_part0728107061307115.png",
+          "type": "Image"
+        },
+        {
+          "name": "minifigure_part_white7461577926794299.png",
+          "path": "minifigure_part_white7461577926794299.png",
+          "type": "Image"
+        },
+        {
+          "name": "minifigure_part_white6141563801243398.png",
+          "path": "minifigure_part_white6141563801243398.png",
+          "type": "Image"
+        },
+        {
+          "name": "minifigure_part_white4979405063839726.png",
+          "path": "minifigure_part_white4979405063839726.png",
+          "type": "Image"
+        },
+        {
+          "name": "part2580378116730633.png",
+          "path": "part2580378116730633.png",
+          "type": "Image"
+        },
+        {
+          "name": "part_white8391301337498064.png",
+          "path": "part_white8391301337498064.png",
+          "type": "Image"
+        },
+        {
+          "name": "part_white7911852917950508.png",
+          "path": "part_white7911852917950508.png",
+          "type": "Image"
+        },
+        {
+          "name": "part_white2749234702643203.png",
+          "path": "part_white2749234702643203.png",
+          "type": "Image"
+        },
+        {
+          "name": "part_unique_white883073903862343.png",
+          "path": "part_unique_white883073903862343.png",
+          "type": "Image"
+        },
+        {
+          "name": "minifigure_part_white009822468735364964.png",
+          "path": "minifigure_part_white009822468735364964.png",
+          "type": "Image"
+        },
+        {
+          "name": "part_unique8447517971225416.png",
+          "path": "part_unique8447517971225416.png",
+          "type": "Image"
+        },
+        {
+          "name": "Trend_White2518360669276096.png",
+          "path": "Trend_White2518360669276096.png",
+          "type": "Image"
+        },
+        {
+          "name": "Barchart8234694838374774.png",
+          "path": "Barchart8234694838374774.png",
+          "type": "Image"
+        },
+        {
+          "name": "Barchart_White7780354372760572.png",
+          "path": "Barchart_White7780354372760572.png",
+          "type": "Image"
+        },
+        {
+          "name": "Barchart_White9317985672151168.png",
+          "path": "Barchart_White9317985672151168.png",
+          "type": "Image"
+        },
+        {
+          "name": "Barchart_White45141851347497663.png",
+          "path": "Barchart_White45141851347497663.png",
+          "type": "Image"
+        },
+        {
+          "name": "Barchart_White1821036917087111.png",
+          "path": "Barchart_White1821036917087111.png",
+          "type": "Image"
+        },
+        {
+          "name": "Trend9968621395356444.png",
+          "path": "Trend9968621395356444.png",
+          "type": "Image"
+        },
+        {
+          "name": "Trend_White06552791051757056.png",
+          "path": "Trend_White06552791051757056.png",
+          "type": "Image"
+        },
+        {
+          "name": "Trend_White8034705940716544.png",
+          "path": "Trend_White8034705940716544.png",
+          "type": "Image"
+        },
+        {
+          "name": "Trend_White7517078074699999.png",
+          "path": "Trend_White7517078074699999.png",
+          "type": "Image"
+        },
+        {
+          "name": "Background_Page_27762211329601949.jpg",
+          "path": "Background_Page_27762211329601949.jpg",
+          "type": "Image"
+        }
+      ]
+    },
+    {
+      "name": "STANDALONEdeneb7E15AEF80B9E4D4F8E12924291ECE89A",
+      "type": "CustomVisual",
+      "items": [
+        {
+          "name": "STANDALONEdeneb7E15AEF80B9E4D4F8E12924291ECE89A.pbiviz.json",
+          "path": "STANDALONEdeneb7E15AEF80B9E4D4F8E12924291ECE89A.pbiviz.json",
+          "type": "CustomVisualMetadata"
+        }
+      ]
+    }
+  ],
+  "settings": {
+    "useStylableVisualContainerHeader": true,
+    "exportDataMode": "AllowSummarized",
+    "defaultDrillFilterOtherVisuals": true,
+    "allowChangeFilterTypes": true,
+    "useEnhancedTooltips": true,
+    "useDefaultAggregateDisplayName": true
+  }
+}

@@ -1,0 +1,71 @@
+table HTML_Color_Rows
+	lineageTag: 5c6152e9-b87f-464c-8338-dc144e99d2be
+
+	column color_super_group
+		lineageTag: 7afad558-7218-48d6-84e5-ca1b123a04a7
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: colors[color_super_group]
+
+		annotation SummarizationSetBy = Automatic
+
+	column color_group
+		lineageTag: f01af6b6-d063-430a-afa1-d840bd17587b
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: colors[color_group]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Color
+		lineageTag: 1c78dc63-d12a-4633-8cc6-17aa4b166b6c
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: colors[Color]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Row
+		formatString: 0
+		lineageTag: 9adea165-5dbd-4da2-bbee-b23668d2bf55
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Row]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition HTML_Color_Rows = calculated
+		mode: import
+		source =
+				
+				
+				ADDCOLUMNS(
+				
+				    SUMMARIZE(
+				
+				        colors,
+				
+				        colors[color_super_group],
+				        colors[color_group],
+				        colors[Color]
+				
+				    ),
+				
+				    "Row",
+				
+				        RANKX(
+				
+				            ALL(colors[Color]),
+				
+				            colors[Color],
+				
+				            ,
+				
+				            ASC
+				
+				        )
+				
+				)
+
+	annotation PBI_Id = b291331b6feb4a00a577ceb490a2ea1a
+

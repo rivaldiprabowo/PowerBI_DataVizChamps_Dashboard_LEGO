@@ -1,0 +1,16 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "c1738bfc7ad5379d0b76",
+  "position": {
+    "x": 1518.3577095879939,
+    "y": 90.218350699423326,
+    "z": 14000,
+    "height": 49.090909090909086,
+    "width": 401.81818181818181
+  },
+  "visualGroup": {
+    "displayName": "BM Variety Trend",
+    "groupMode": "ScaleMode"
+  },
+  "parentGroupName": "4040fa9dd116d52412be"
+}

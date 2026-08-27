@@ -1,0 +1,17 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "08f67cc0ca799e039a33",
+  "position": {
+    "x": 477.9495268138802,
+    "y": 363.05555555555566,
+    "z": 6500,
+    "height": 27.777777777777779,
+    "width": 192.22222222222223
+  },
+  "visualGroup": {
+    "displayName": "BM Variety Box",
+    "groupMode": "ScaleMode"
+  },
+  "parentGroupName": "4040fa9dd116d52412be",
+  "isHidden": true
+}

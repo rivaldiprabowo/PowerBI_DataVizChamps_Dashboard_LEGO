@@ -1,0 +1,38 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "493571f2a8fdc4a7bd53",
+  "position": {
+    "x": 645.9591836734694,
+    "y": 838.40816326530614,
+    "z": 24000,
+    "height": 175,
+    "width": 743.0204081632653,
+    "tabOrder": 22000
+  },
+  "visual": {
+    "visualType": "htmlContent443BE3AD55E043BF878BED274D3A6855",
+    "query": {
+      "queryState": {
+        "content": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "HTML Set Personality Card"
+                }
+              },
+              "queryRef": "_Measures.HTML Set Personality Card",
+              "nativeQueryRef": "HTML Set Personality Card"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
