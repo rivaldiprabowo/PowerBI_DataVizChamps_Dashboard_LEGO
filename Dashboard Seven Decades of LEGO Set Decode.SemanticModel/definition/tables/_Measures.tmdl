@@ -10562,6 +10562,93 @@ table _Measures
 		displayFolder: Page 2 Parts
 		lineageTag: 99a9bb21-06f4-471b-b302-67fdb85b7e06
 
+	/// Number of new LEGO colors released in the year(s) in context. Excludes sentinel color_id -1 and 9999.
+	measure 'cd Colors Released' =
+			VAR CurrentYear = MAX ( 'dim_year'[year] )
+			RETURN
+			CALCULATE (
+			    COUNTROWS ( colors ),
+			    ALL ( colors ),
+			    colors[color_id] <> -1,
+			    colors[color_id] <> 9999,
+			    colors[year_release] = CurrentYear
+			)
+		formatString: #,##0
+		displayFolder: Page 4 Color Development
+		lineageTag: 37ea1402-a495-4020-a8b7-3a22efdfd2ef
+
+	/// Number of LEGO colors that were discontinued (year_stop matches) in the year(s) in context.
+	measure 'cd Colors Discontinued' =
+			VAR CurrentYear = MAX ( 'dim_year'[year] )
+			RETURN
+			CALCULATE (
+			    COUNTROWS ( colors ),
+			    ALL ( colors ),
+			    colors[color_id] <> -1,
+			    colors[color_id] <> 9999,
+			    colors[year_stop] = CurrentYear
+			)
+		formatString: #,##0
+		displayFolder: Page 4 Color Development
+		lineageTag: 0368855c-e1be-46e4-a2e2-7522ccc175eb
+
+	/// Number of LEGO colors active during the year(s) in context (released on/before year AND not yet discontinued).
+	measure 'cd Active Colors' =
+			VAR CurrentYear = MAX ( 'dim_year'[year] )
+			RETURN
+			CALCULATE (
+			    COUNTROWS ( colors ),
+			    ALL ( colors ),
+			    colors[color_id] <> -1,
+			    colors[color_id] <> 9999,
+			    colors[year_release] <= CurrentYear,
+			    colors[year_stop] >= CurrentYear
+			)
+		formatString: #,##0
+		displayFolder: Page 4 Color Development
+		lineageTag: 9f63b0e4-9884-453c-8302-a9efb50293d4
+
+	/// Cumulative distinct LEGO colors ever released up to and including the year in context.
+	measure 'cd Cumulative Colors Released' =
+			VAR CurrentYear = MAX ( 'dim_year'[year] )
+			RETURN
+			CALCULATE (
+			    DISTINCTCOUNT ( colors[Color] ),
+			    ALL ( colors ),
+			    colors[color_id] <> -1,
+			    colors[color_id] <> 9999,
+			    colors[year_release] <= CurrentYear
+			)
+		formatString: #,##0
+		displayFolder: Page 4 Color Development
+		lineageTag: 6059cad5-4106-499b-babc-381af07c6ded
+
+	/// Net change in palette size for the year: [cd Colors Released] minus [cd Colors Discontinued].
+	measure 'cd Net Color Change' = [cd Colors Released] - [cd Colors Discontinued]
+		formatString: +#,##0;-#,##0;0
+		displayFolder: Page 4 Color Development
+		lineageTag: 30b13e87-37d4-4abd-906d-156246d11ff6
+
+	/// Average age (years since release) of colors that are active in the year in context.
+	measure 'cd Avg Color Age' =
+			VAR CurrentYear = MAX ( 'dim_year'[year] )
+			VAR ActiveColorsWithAge =
+			    ADDCOLUMNS (
+			        FILTER (
+			            ALL ( colors ),
+			            colors[color_id] <> -1
+			                && colors[color_id] <> 9999
+			                && colors[year_release] <= CurrentYear
+			                && colors[year_stop] >= CurrentYear
+			        ),
+			        "@Age", CurrentYear - colors[year_release]
+			    )
+			RETURN
+			AVERAGEX ( ActiveColorsWithAge, [@Age] )
+		formatString: 0.0
+		displayFolder: Page 4 Color Development
+		lineageTag: 7bc257e2-a135-4794-99af-683e19eda574
+
 	column Value
 		isHidden
 		formatString: 0

@@ -11,7 +11,7 @@ annotation __PBI_TimeIntelligenceEnabled = 0
 
 annotation PBI_QueryOrder = ["inventories","inventory_sets","sets","themes","inventory_parts","parts","colors","part_categories","inventory_minifigs","minifigures"]
 
-annotation PBI_ProTooling = ["CopilotTooling","Copilot","CopilotMeasureDescriptions","DevMode"]
+annotation PBI_ProTooling = ["CopilotTooling","Copilot","CopilotMeasureDescriptions","DevMode","MCP-PBIModeling"]
 
 ref table inventories
 ref table sets
